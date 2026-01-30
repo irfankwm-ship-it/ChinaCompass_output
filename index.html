@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Compass — Canada-China Open Source Monitor</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2128;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --text-dim: #6e7681;
+  --accent: #c9a227;
+  --red: #f85149;
+  --orange: #d29922;
+  --green: #3fb950;
+  --blue: #58a6ff;
+  --purple: #bc8cff;
+  --cyan: #39d2c0;
+  --trade: #d29922;
+  --security: #f85149;
+  --policy: #58a6ff;
+  --chinese-source: #bc8cff;
+  --diaspora: #39d2c0;
+  --tech: #f778ba;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.site-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.header-meta {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: right;
+}
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+nav .container {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* TENSION INDEX */
+.tension-bar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.tension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tension-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.tension-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.tension-value .score { color: var(--orange); }
+.tension-value .label { font-size: 14px; color: var(--text-muted); margin-left: 8px; }
+.tension-value .delta { font-size: 13px; color: var(--text-dim); margin-left: 8px; }
+.tension-value .delta.up { color: var(--red); }
+.tension-value .delta.down { color: var(--green); }
+
+.tension-components {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tension-component {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tc-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tc-bar-wrap {
+  background: var(--bg);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tc-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.tc-score {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* SPARKLINE (CSS-only approximation) */
+.sparkline {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 32px;
+  margin-top: 12px;
+}
+
+.spark-bar {
+  flex: 1;
+  background: var(--border);
+  border-radius: 1px;
+  min-width: 3px;
+  position: relative;
+}
+
+.spark-bar.current { background: var(--orange); }
+
+.sparkline-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.sparkline-labels span {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+/* MAIN LAYOUT */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+@media (max-width: 960px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* SIGNAL FEED */
+.signal-feed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.signal-feed-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.signal-count {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* SIGNAL CARD */
+.signal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.signal-card:hover { border-color: var(--text-dim); }
+.signal-card.cat-trade { border-left-color: var(--trade); }
+.signal-card.cat-security { border-left-color: var(--security); }
+.signal-card.cat-policy { border-left-color: var(--policy); }
+.signal-card.cat-chinese { border-left-color: var(--chinese-source); }
+.signal-card.cat-diaspora { border-left-color: var(--diaspora); }
+.signal-card.cat-tech { border-left-color: var(--tech); }
+
+.signal-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.signal-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--bg);
+}
+
+.badge-trade { color: var(--trade); border: 1px solid var(--trade); }
+.badge-security { color: var(--security); border: 1px solid var(--security); }
+.badge-policy { color: var(--policy); border: 1px solid var(--policy); }
+.badge-chinese { color: var(--chinese-source); border: 1px solid var(--chinese-source); }
+.badge-diaspora { color: var(--diaspora); border: 1px solid var(--diaspora); }
+.badge-tech { color: var(--tech); border: 1px solid var(--tech); }
+
+.signal-score {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.severity-significant { color: var(--red); }
+.severity-notable { color: var(--orange); }
+.severity-routine { color: var(--text-dim); }
+
+.signal-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.signal-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+
+.signal-context {
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.signal-context li {
+  margin-left: 16px;
+  margin-bottom: 2px;
+}
+
+.signal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.signal-source {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.signal-source a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.signal-source a:hover { text-decoration: underline; }
+
+.signal-links {
+  display: flex;
+  gap: 12px;
+}
+
+.signal-links a {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--text-dim);
+}
+
+.signal-links a:hover { color: var(--text); }
+
+.score-breakdown {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.sb-item {
+  text-align: center;
+}
+
+.sb-label {
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sb-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* MT WARNING */
+.mt-warning {
+  background: #2d1f00;
+  border: 1px solid #5c3d00;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: var(--orange);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.original-text {
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.original-toggle {
+  font-size: 11px;
+  color: var(--text-dim);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* SIDEBAR */
+.sidebar-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.sidebar-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ACTIVE SITUATIONS */
+.situation {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.situation:last-child { border-bottom: none; }
+
+.situation-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.situation-status {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.situation-duration {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* DISRUPTIONS */
+.disruption {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.disruption:last-child { border-bottom: none; }
+
+.disruption-commodity {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+.disruption-detail {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.disruption-empty {
+  font-size: 12px;
+  color: var(--text-dim);
+  padding: 8px 0;
+}
+
+/* BILL TRACKER */
+.bill {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bill:last-child { border-bottom: none; }
+
+.bill-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bill-title {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.bill-progress {
+  display: flex;
+  gap: 3px;
+  margin-top: 6px;
+}
+
+.bill-stage {
+  height: 6px;
+  flex: 1;
+  background: var(--bg);
+  border-radius: 3px;
+}
+
+.bill-stage.filled { background: var(--blue); }
+.bill-stage.current { background: var(--accent); }
+
+.bill-status {
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* TRADE SNAPSHOT */
+.trade-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.trade-row:last-child { border-bottom: none; }
+
+.trade-label { color: var(--text-muted); }
+.trade-value { color: var(--text); font-weight: 600; }
+.trade-delta { font-size: 11px; margin-left: 6px; }
+.trade-delta.up { color: var(--green); }
+.trade-delta.down { color: var(--red); }
+
+/* HANSARD TRACKER */
+.hansard-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.hansard-party { color: var(--text-muted); }
+.hansard-count { color: var(--text); font-weight: 600; }
+.hansard-bar-wrap {
+  flex: 1;
+  margin: 0 10px;
+  background: var(--bg);
+  height: 6px;
+  border-radius: 3px;
+  align-self: center;
+}
+
+.hansard-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--blue);
+}
+
+/* METHODOLOGY NOTE */
+.method-note {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.method-note a {
+  color: var(--text-dim);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+/* EXPOSURE TABLE */
+.exposure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.exposure-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.exposure-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.exposure-table tr:last-child td { border-bottom: none; }
+
+.flag-military {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.footer-content a {
+  color: var(--text-dim);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.footer-transparency {
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* DASHBOARD PAGE SECTIONS */
+.section-divider {
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+  padding-top: 24px;
+}
+
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.dash-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+
+.dash-card-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+/* SUPPLY CHAIN TABLE */
+.supply-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.supply-table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.supply-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.supply-table td:first-child { color: var(--text); }
+
+.supply-bar-cell {
+  width: 120px;
+}
+
+.supply-bar-wrap {
+  background: var(--bg);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.supply-bar {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.supply-bar.high { background: var(--red); }
+.supply-bar.medium { background: var(--orange); }
+.supply-bar.low { background: var(--green); }
+
+.alt-low { color: var(--red); }
+.alt-moderate { color: var(--orange); }
+.alt-growing { color: var(--cyan); }
+.alt-high { color: var(--green); }
+
+/* DIPLOMATIC TIMELINE */
+.diplo-event {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.diplo-event:last-child { border-bottom: none; }
+
+.diplo-date {
+  color: var(--text-dim);
+  white-space: nowrap;
+  min-width: 56px;
+}
+
+.diplo-text { color: var(--text-muted); }
+.diplo-level {
+  font-size: 10px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+/* ENTITY CARD */
+.entity-section { margin-top: 32px; }
+
+.entity-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.entity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.entity-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.entity-name-zh {
+  font-size: 14px;
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.entity-type {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  background: var(--bg);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.entity-field {
+  margin-bottom: 10px;
+}
+
+.entity-field-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+.entity-field-value {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.entity-meta {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+/* ESCALATION CHIP */
+.escalation {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.escalation-elevated { background: #3d1f1f; color: var(--red); border: 1px solid var(--red); }
+.escalation-firm { background: #2d1f00; color: var(--orange); border: 1px solid var(--orange); }
+.escalation-moderate { background: #1f2d1f; color: var(--green); border: 1px solid var(--green); }
+.escalation-neutral { background: var(--bg); color: var(--text-dim); border: 1px solid var(--border); }
+
+/* TIMESTAMP PILL */
+.timestamp {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="container header-inner">
+    <div>
+      <div class="site-title">CHINA COMPASS</div>
+      <div class="site-subtitle">Open-source Canada-China monitor &middot; Fully automated &middot; No editorial &middot; No AI generation</div>
+    </div>
+    <div class="header-meta">
+      Last pipeline run: 2026-01-30 06:00 ET<br>
+      All pipelines healthy &middot; 14 signals today
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="#" class="active">Signal Feed</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#entities">Entities</a>
+    <a href="#bills">Bills</a>
+    <a href="#chinese-sources">Chinese Sources</a>
+    <a href="#exposure">Exposure</a>
+    <a href="#methodology">Methodology</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ===== TENSION INDEX ===== -->
+<div class="tension-bar">
+  <div class="tension-header">
+    <span class="tension-title">Tension Index</span>
+    <div class="tension-value">
+      <span class="score">3.2</span><span class="label">/ 5.0 &mdash; TENSE</span>
+      <span class="delta up">&uarr; 0.1 from yesterday</span>
+    </div>
+  </div>
+
+  <div class="tension-components">
+    <div class="tension-component">
+      <span class="tc-label">Trade Friction</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:48%; background:var(--orange)"></div></div>
+      <span class="tc-score">12 / 25</span>
+    </div>
+    <div class="tension-component">
+      <span class="tc-label">Trade Volume</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:33%; background:var(--orange)"></div></div>
+      <span class="tc-score">5 / 15</span>
+    </div>
+    <div class="tension-component">
+      <span class="tc-label">Diplomatic Freq.</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:53%; background:var(--orange)"></div></div>
+      <span class="tc-score">8 / 15</span>
+    </div>
+    <div class="tension-component">
+      <span class="tc-label">Escalation Lang.</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:67%; background:var(--red)"></div></div>
+      <span class="tc-score">10 / 15</span>
+    </div>
+    <div class="tension-component">
+      <span class="tc-label">Parliamentary</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:53%; background:var(--orange)"></div></div>
+      <span class="tc-score">8 / 15</span>
+    </div>
+    <div class="tension-component">
+      <span class="tc-label">Security Events</span>
+      <div class="tc-bar-wrap"><div class="tc-bar" style="width:67%; background:var(--red)"></div></div>
+      <span class="tc-score">10 / 15</span>
+    </div>
+  </div>
+
+  <!-- 12-month sparkline -->
+  <div class="sparkline">
+    <div class="spark-bar" style="height:45%"></div>
+    <div class="spark-bar" style="height:48%"></div>
+    <div class="spark-bar" style="height:40%"></div>
+    <div class="spark-bar" style="height:52%"></div>
+    <div class="spark-bar" style="height:55%"></div>
+    <div class="spark-bar" style="height:70%"></div>
+    <div class="spark-bar" style="height:65%"></div>
+    <div class="spark-bar" style="height:58%"></div>
+    <div class="spark-bar" style="height:50%"></div>
+    <div class="spark-bar" style="height:42%"></div>
+    <div class="spark-bar" style="height:48%"></div>
+    <div class="spark-bar" style="height:52%"></div>
+    <div class="spark-bar" style="height:55%"></div>
+    <div class="spark-bar" style="height:60%"></div>
+    <div class="spark-bar" style="height:58%"></div>
+    <div class="spark-bar" style="height:62%"></div>
+    <div class="spark-bar" style="height:59%"></div>
+    <div class="spark-bar" style="height:55%"></div>
+    <div class="spark-bar" style="height:50%"></div>
+    <div class="spark-bar" style="height:53%"></div>
+    <div class="spark-bar" style="height:58%"></div>
+    <div class="spark-bar" style="height:56%"></div>
+    <div class="spark-bar" style="height:60%"></div>
+    <div class="spark-bar" style="height:64%" class="current"></div>
+  </div>
+  <div class="sparkline-labels">
+    <span>Feb 2025</span>
+    <span>May</span>
+    <span>Aug</span>
+    <span>Nov</span>
+    <span>Jan 2026</span>
+  </div>
+  <div class="method-note">Fully quantitative composite. No editorial input. <a href="#methodology">See methodology</a></div>
+</div>
+
+<!-- ===== MAIN GRID: SIGNAL FEED + SIDEBAR ===== -->
+<div class="main-grid">
+
+<!-- LEFT: SIGNAL FEED -->
+<div>
+  <div class="signal-feed-header">
+    <span class="signal-feed-title">Today's Signals</span>
+    <span class="signal-count">14 signals &middot; 2 significant &middot; 5 notable &middot; 7 routine</span>
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Trade</button>
+    <button class="filter-btn">Security</button>
+    <button class="filter-btn">Policy</button>
+    <button class="filter-btn">Chinese Sources</button>
+    <button class="filter-btn">Significant Only</button>
+  </div>
+
+  <!-- SIGNAL 1: SIGNIFICANT - TRADE -->
+  <div class="signal-card cat-trade">
+    <div class="signal-meta">
+      <span class="signal-badge badge-trade">Trade</span>
+      <span class="signal-score severity-significant">78 / 100 &middot; SIGNIFICANT</span>
+      <span class="timestamp">2026-01-30 02:15 ET</span>
+    </div>
+    <div class="signal-title">Canola exports to China fall 24% year-over-year in December 2025</div>
+    <div class="signal-body">
+      Statistics Canada reports Canadian canola exports to China totalled $312M in December 2025, down from $411M in December 2024 and $380M in November 2025. This marks the third consecutive monthly decline.
+    </div>
+    <div class="signal-context">
+      <ul>
+        <li>6-month average: $387M</li>
+        <li>12-month average: $395M</li>
+        <li>3rd consecutive month of decline (Oct: -8%, Nov: -14%, Dec: -24%)</li>
+        <li>Largest single-month YoY drop since March 2024</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">Statistics Canada Table 12-10-0011-01</a> &middot; Tier 1 (Official Record)</span>
+      <div class="signal-links">
+        <a href="#">Canola profile</a>
+        <a href="#">Trade dashboard</a>
+        <a href="#">Historical data</a>
+      </div>
+    </div>
+    <div class="score-breakdown">
+      <div class="sb-item"><div class="sb-label">Relevance</div><div class="sb-value">25<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Magnitude</div><div class="sb-value">25<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Novelty</div><div class="sb-value">15<span style="color:var(--text-dim)">/20</span></div></div>
+      <div class="sb-item"><div class="sb-label">Source</div><div class="sb-value">20<span style="color:var(--text-dim)">/20</span></div></div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 2: SIGNIFICANT - SECURITY -->
+  <div class="signal-card cat-security">
+    <div class="signal-meta">
+      <span class="signal-badge badge-security">Security</span>
+      <span class="signal-score severity-significant">74 / 100 &middot; SIGNIFICANT</span>
+      <span class="timestamp">2026-01-30 03:40 ET</span>
+    </div>
+    <div class="signal-title">CSE publishes advisory on cyber threat activity targeting Canadian critical infrastructure</div>
+    <div class="signal-body">
+      The Communications Security Establishment published advisory AV26-041 identifying ongoing cyber threat activity targeting Canadian energy and telecommunications infrastructure operators. The advisory attributes the activity to a state-sponsored actor and recommends specific mitigations.
+    </div>
+    <div class="signal-context">
+      <ul>
+        <li>4th CSE advisory in past 90 days (baseline: 1-2 per quarter)</li>
+        <li>Previous advisory (AV26-033, Dec 12) targeted water treatment facilities</li>
+        <li>Advisory references "state-sponsored" but does not name specific country in public version</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">CSE Advisory AV26-041</a> &middot; Tier 1 (Official Record)</span>
+      <div class="signal-links">
+        <a href="#">CSE profile</a>
+        <a href="#">Security signals</a>
+      </div>
+    </div>
+    <div class="score-breakdown">
+      <div class="sb-item"><div class="sb-label">Relevance</div><div class="sb-value">20<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Magnitude</div><div class="sb-value">22<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Novelty</div><div class="sb-value">12<span style="color:var(--text-dim)">/20</span></div></div>
+      <div class="sb-item"><div class="sb-label">Source</div><div class="sb-value">20<span style="color:var(--text-dim)">/20</span></div></div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 3: NOTABLE - POLICY -->
+  <div class="signal-card cat-policy">
+    <div class="signal-meta">
+      <span class="signal-badge badge-policy">Policy</span>
+      <span class="signal-score severity-notable">62 / 100 &middot; NOTABLE</span>
+      <span class="timestamp">2026-01-30 02:30 ET</span>
+    </div>
+    <div class="signal-title">Bill C-70 (Foreign Influence Transparency) referred to Senate Committee on National Security</div>
+    <div class="signal-body">
+      LEGISinfo records a status change for Bill C-70, the Foreign Influence Transparency and Accountability Act. The bill has been referred to the Senate Standing Committee on National Security, Defence and Veterans Affairs. Next hearing scheduled: February 10, 2026.
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">LEGISinfo &mdash; Bill C-70</a> &middot; Tier 1 (Official Record)</span>
+      <div class="signal-links">
+        <a href="#">Bill tracker</a>
+        <a href="#">Full bill text</a>
+      </div>
+    </div>
+    <div class="score-breakdown">
+      <div class="sb-item"><div class="sb-label">Relevance</div><div class="sb-value">22<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Magnitude</div><div class="sb-value">20<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Novelty</div><div class="sb-value">15<span style="color:var(--text-dim)">/20</span></div></div>
+      <div class="sb-item"><div class="sb-label">Source</div><div class="sb-value">20<span style="color:var(--text-dim)">/20</span></div></div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 4: NOTABLE - CHINESE SOURCE (with MT) -->
+  <div class="signal-card cat-chinese">
+    <div class="signal-meta">
+      <span class="signal-badge badge-chinese">Chinese Source</span>
+      <span class="signal-score severity-notable">58 / 100 &middot; NOTABLE</span>
+      <span class="timestamp">2026-01-30 04:10 ET</span>
+    </div>
+    <div class="signal-title">MFA spokesperson addresses "Western interference in Asia-Pacific regional affairs"</div>
+
+    <div class="mt-warning">
+      &#9888; Machine translated (NLLB-200 600M) &mdash; may contain errors &mdash;
+      <button class="original-toggle" onclick="document.getElementById('orig1').style.display = document.getElementById('orig1').style.display === 'none' ? 'block' : 'none'">Show original</button>
+    </div>
+    <div class="original-text" id="orig1" style="display:none">
+      "我们注意到近期个别西方国家在亚太地区不断制造紧张局势，严重干涉地区国家内政。中方坚决反对任何形式的外部势力干涉亚太事务。我们敦促有关国家尊重地区国家的主权和领土完整，停止一切挑衅行为。"
+    </div>
+
+    <div class="signal-body">
+      "We have noted that certain Western countries have recently been continuously creating tensions in the Asia-Pacific region and seriously interfering in the internal affairs of regional countries. China resolutely opposes any form of external forces interfering in Asia-Pacific affairs. We urge the relevant countries to respect the sovereignty and territorial integrity of regional countries and stop all provocative actions."
+    </div>
+
+    <div class="signal-context">
+      <ul>
+        <li>Escalation keywords detected: <strong>坚决反对</strong> (resolutely oppose), <strong>敦促</strong> (urge)</li>
+        <li>Escalation level: <span class="escalation escalation-firm">FIRM</span></li>
+        <li>Does not name Canada directly &mdash; matched on: "Western countries", "Asia-Pacific"</li>
+        <li>MFA regular press conference &mdash; not a standalone statement</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">PRC Ministry of Foreign Affairs</a> &middot; Tier 1 (Official Record) &middot; Translated by NLLB-200</span>
+      <div class="signal-links">
+        <a href="#">MFA profile</a>
+        <a href="#">Chinese signals archive</a>
+      </div>
+    </div>
+    <div class="score-breakdown">
+      <div class="sb-item"><div class="sb-label">Relevance</div><div class="sb-value">13<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Magnitude</div><div class="sb-value">15<span style="color:var(--text-dim)">/30</span></div></div>
+      <div class="sb-item"><div class="sb-label">Novelty</div><div class="sb-value">12<span style="color:var(--text-dim)">/20</span></div></div>
+      <div class="sb-item"><div class="sb-label">Source</div><div class="sb-value">18<span style="color:var(--text-dim)">/20</span></div></div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 5: NOTABLE - TRADE -->
+  <div class="signal-card cat-trade">
+    <div class="signal-meta">
+      <span class="signal-badge badge-trade">Trade</span>
+      <span class="signal-score severity-notable">53 / 100 &middot; NOTABLE</span>
+      <span class="timestamp">2026-01-30 02:15 ET</span>
+    </div>
+    <div class="signal-title">Lumber exports to China down 12% year-over-year in December 2025</div>
+    <div class="signal-body">
+      Statistics Canada reports Canadian softwood lumber exports to China totalled $198M in December 2025, compared to $225M in December 2024. The 12% decline follows a period of relative stability (Oct: +2%, Nov: -3%).
+    </div>
+    <div class="signal-context">
+      <ul>
+        <li>6-month average: $215M</li>
+        <li>China's domestic housing starts down 18% YoY (per NBS data, separately collected)</li>
+        <li>First double-digit decline in lumber exports since August 2025</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">Statistics Canada Table 12-10-0011-01</a> &middot; Tier 1 (Official Record)</span>
+      <div class="signal-links">
+        <a href="#">Lumber profile</a>
+        <a href="#">Trade dashboard</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 6: NOTABLE - CHINESE SOURCE (Elevated) -->
+  <div class="signal-card cat-chinese">
+    <div class="signal-meta">
+      <span class="signal-badge badge-chinese">Chinese Source</span>
+      <span class="signal-score severity-notable">51 / 100 &middot; NOTABLE</span>
+      <span class="timestamp">2026-01-30 04:10 ET</span>
+    </div>
+    <div class="signal-title">Global Times editorial: "Canada should not be a pawn in US Indo-Pacific strategy"</div>
+
+    <div class="mt-warning">
+      &#9888; Machine translated (NLLB-200 600M) &mdash; may contain errors &mdash;
+      <button class="original-toggle" onclick="document.getElementById('orig2').style.display = document.getElementById('orig2').style.display === 'none' ? 'block' : 'none'">Show original</button>
+    </div>
+    <div class="original-text" id="orig2" style="display:none">
+      "加拿大不应充当美国印太战略的棋子。渥太华需要独立思考，而不是盲目追随华盛顿的对华政策。中加关系的改善符合两国人民的根本利益。"
+    </div>
+
+    <div class="signal-body">
+      "Canada should not serve as a chess piece in America's Indo-Pacific strategy. Ottawa needs independent thinking, rather than blindly following Washington's China policy. The improvement of China-Canada relations is in the fundamental interests of the peoples of both countries."
+    </div>
+
+    <div class="signal-context">
+      <ul>
+        <li>Escalation keywords detected: none in high/firm category</li>
+        <li>Escalation level: <span class="escalation escalation-moderate">MODERATE</span></li>
+        <li>Directly names Canada (加拿大) and Ottawa (渥太华) &mdash; Tier 1 keyword match</li>
+        <li>Source: Global Times editorial (opinion, nationalist-leaning &mdash; lower source weight)</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">Global Times (环球时报)</a> &middot; Tier 2 (State Media Editorial) &middot; Translated by NLLB-200</span>
+      <div class="signal-links">
+        <a href="#">Global Times profile</a>
+        <a href="#">Chinese signals archive</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 7: NOTABLE - HANSARD -->
+  <div class="signal-card cat-policy">
+    <div class="signal-meta">
+      <span class="signal-badge badge-policy">Policy</span>
+      <span class="signal-score severity-notable">49 / 100 &middot; NOTABLE</span>
+      <span class="timestamp">2026-01-30 02:30 ET</span>
+    </div>
+    <div class="signal-title">Parliamentary mention spike: "China" referenced 34 times in Hansard this sitting week</div>
+    <div class="signal-body">
+      Hansard keyword monitoring detected 34 substantive mentions of China-related terms during the sitting week of January 26-30, 2026. The 90-day rolling average is 18 mentions per sitting week. This represents a 1.9&times; spike above baseline.
+    </div>
+    <div class="signal-context">
+      <ul>
+        <li>Breakdown by party: CPC 14, LPC 9, NDP 6, BQ 3, GP 2</li>
+        <li>Top topic clusters: "foreign interference" (12), "trade" (9), "security" (8), "human rights" (5)</li>
+        <li>3 new written questions on Order Paper mentioning China</li>
+      </ul>
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">OpenParl / Hansard</a> &middot; Tier 1 (Official Record)</span>
+      <div class="signal-links">
+        <a href="#">Hansard data</a>
+        <a href="#">Party breakdown</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIGNAL 8: ROUTINE -->
+  <div class="signal-card cat-trade">
+    <div class="signal-meta">
+      <span class="signal-badge badge-trade">Trade</span>
+      <span class="signal-score severity-routine">32 / 100 &middot; ROUTINE</span>
+      <span class="timestamp">2026-01-30 02:15 ET</span>
+    </div>
+    <div class="signal-title">Pork exports to China: $89M in December 2025 (&#8209;3% YoY)</div>
+    <div class="signal-body">
+      Canadian pork exports to China were $89M in December 2025, a marginal decline from $92M in December 2024. Within normal variance of 6-month trend.
+    </div>
+    <div class="signal-footer">
+      <span class="signal-source">Source: <a href="#">Statistics Canada Table 12-10-0011-01</a> &middot; Tier 1</span>
+      <div class="signal-links">
+        <a href="#">Pork profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:16px; color:var(--text-dim); font-size:12px;">
+    Showing 8 of 14 signals &middot; <a href="#" style="color:var(--blue); text-decoration:none;">Load all signals</a>
+    <br>6 additional routine signals below display threshold
+  </div>
+
+</div>
+
+<!-- RIGHT: SIDEBAR -->
+<div>
+
+  <!-- ACTIVE SITUATIONS -->
+  <div class="sidebar-section">
+    <div class="sidebar-title">Active Situations</div>
+    <div class="situation">
+      <div class="situation-name">Canola export decline pattern</div>
+      <div class="situation-status">3rd consecutive monthly decline &mdash; accelerating</div>
+      <div class="situation-duration">Tracked since: Oct 2025 &middot; Updated: today</div>
+    </div>
+    <div class="situation">
+      <div class="situation-name">NSICOP review of university partnerships</div>
+      <div class="situation-status">Report pending &mdash; expected Q1 2026</div>
+      <div class="situation-duration">Tracked since: Sep 2025 &middot; Updated: Jan 22</div>
+    </div>
+    <div class="situation">
+      <div class="situation-name">Chen Wei consular access case</div>
+      <div class="situation-status">Detained &mdash; Day 847 &mdash; no public change</div>
+      <div class="situation-duration">Tracked since: Oct 2023 &middot; Updated: Jan 15</div>
+    </div>
+    <div class="method-note">Maintained by operator. Updated weekly.</div>
+  </div>
+
+  <!-- DISRUPTION ALERTS -->
+  <div class="sidebar-section">
+    <div class="sidebar-title">Trade Disruption Alerts</div>
+    <div class="disruption">
+      <div class="disruption-commodity">&#9888; Canola &mdash; ACTIVE</div>
+      <div class="disruption-detail">3 signals in 7 days from 2 source types. Pattern: declining export volumes + industry association report of increased inspection times at Dalian port.</div>
+      <div class="disruption-detail" style="margin-top:4px;">Duration: 12 days &middot; Confidence: moderate</div>
+    </div>
+    <div class="disruption-empty" style="margin-top:8px; padding-top:8px; border-top: 1px solid var(--border);">
+      No other active disruptions.<br>
+      Last resolved: Lobster inspection delay (Jan 12, 8 days)
+    </div>
+    <div class="method-note">Rule-based detection: 3+ signals, same commodity, 7-day window, 2+ source types. <a href="#methodology">Details</a></div>
+  </div>
+
+  <!-- BILL TRACKER -->
+  <div class="sidebar-section">
+    <div class="sidebar-title">Legislative Tracker</div>
+
+    <div class="bill">
+      <div class="bill-name">C-70</div>
+      <div class="bill-title">Foreign Influence Transparency and Accountability Act</div>
+      <div class="bill-progress">
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage current"></div>
+        <div class="bill-stage"></div>
+      </div>
+      <div class="bill-status">Senate Committee &middot; Next hearing: Feb 10 &middot; STATUS CHANGED TODAY</div>
+    </div>
+
+    <div class="bill">
+      <div class="bill-name">S-237</div>
+      <div class="bill-title">Critical Minerals Protection Act</div>
+      <div class="bill-progress">
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage current"></div>
+        <div class="bill-stage"></div>
+        <div class="bill-stage"></div>
+        <div class="bill-stage"></div>
+        <div class="bill-stage"></div>
+      </div>
+      <div class="bill-status">1st Reading (Senate) &middot; Dec 14</div>
+    </div>
+
+    <div class="bill">
+      <div class="bill-name">M-92</div>
+      <div class="bill-title">Recognition of Uyghur Genocide</div>
+      <div class="bill-progress">
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage filled"></div>
+        <div class="bill-stage current"></div>
+      </div>
+      <div class="bill-status">Awaiting vote &middot; Feb 3</div>
+    </div>
+
+    <div class="method-note">Source: LEGISinfo. Stages: Intro &rarr; 1R &rarr; 2R &rarr; Committee &rarr; 3R &rarr; Senate/RA</div>
+  </div>
+
+  <!-- TRADE SNAPSHOT -->
+  <div class="sidebar-section">
+    <div class="sidebar-title">Trade Snapshot (Dec 2025)</div>
+    <div class="trade-row">
+      <span class="trade-label">Exports to China</span>
+      <span><span class="trade-value">$2.1B</span><span class="trade-delta down">&darr;14% YoY</span></span>
+    </div>
+    <div class="trade-row">
+      <span class="trade-label">Imports from China</span>
+      <span><span class="trade-value">$5.8B</span><span class="trade-delta down">&darr;3% YoY</span></span>
+    </div>
+    <div class="trade-row">
+      <span class="trade-label">Balance</span>
+      <span><span class="trade-value" style="color:var(--red)">-$3.7B</span><span class="trade-delta">&nbsp;</span></span>
+    </div>
+    <div class="trade-row">
+      <span class="trade-label">Top export (Canola)</span>
+      <span><span class="trade-value">$312M</span><span class="trade-delta down">&darr;24% YoY</span></span>
+    </div>
+    <div class="trade-row">
+      <span class="trade-label">Top export (Lumber)</span>
+      <span><span class="trade-value">$198M</span><span class="trade-delta down">&darr;12% YoY</span></span>
+    </div>
+    <div class="method-note">Source: Statistics Canada. 6-week lag. Last updated: 2026-01-28.</div>
+  </div>
+
+  <!-- HANSARD TRACKER -->
+  <div class="sidebar-section">
+    <div class="sidebar-title">Hansard: "China" Mentions This Week</div>
+    <div style="font-size:24px; font-weight:700; margin-bottom:8px;">34 <span style="font-size:12px; color:var(--text-dim); font-weight:400;">mentions (baseline: 18/week)</span></div>
+    <div class="hansard-row">
+      <span class="hansard-party">CPC</span>
+      <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:82%"></div></div>
+      <span class="hansard-count">14</span>
+    </div>
+    <div class="hansard-row">
+      <span class="hansard-party">LPC</span>
+      <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:53%"></div></div>
+      <span class="hansard-count">9</span>
+    </div>
+    <div class="hansard-row">
+      <span class="hansard-party">NDP</span>
+      <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:35%"></div></div>
+      <span class="hansard-count">6</span>
+    </div>
+    <div class="hansard-row">
+      <span class="hansard-party">BQ</span>
+      <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:18%"></div></div>
+      <span class="hansard-count">3</span>
+    </div>
+    <div class="hansard-row">
+      <span class="hansard-party">GP</span>
+      <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:12%"></div></div>
+      <span class="hansard-count">2</span>
+    </div>
+    <div class="method-note">Source: OpenParl API. Keyword match on China-related terms. Incidental mentions excluded by co-occurrence filter.</div>
+  </div>
+
+</div>
+</div><!-- end main-grid -->
+
+<!-- ===== DASHBOARD SECTION ===== -->
+<div class="section-divider" id="dashboard">
+  <div class="section-title">Dashboard &mdash; Exposure</div>
+</div>
+
+<div class="dashboard-grid">
+
+  <!-- SUPPLY CHAIN DEPENDENCY -->
+  <div class="dash-card" style="grid-column: span 2;">
+    <div class="dash-card-title">Supply Chain Dependency on China</div>
+    <table class="supply-table">
+      <thead>
+        <tr>
+          <th>Commodity</th>
+          <th>China Share</th>
+          <th style="width:120px">Visual</th>
+          <th>Trend</th>
+          <th>Alt. Sources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rare earths</td>
+          <td>87%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar high" style="width:87%"></div></div></td>
+          <td>&mdash;</td>
+          <td class="alt-low">Low</td>
+        </tr>
+        <tr>
+          <td>Solar panels</td>
+          <td>78%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar high" style="width:78%"></div></div></td>
+          <td>&uarr;</td>
+          <td class="alt-moderate">Moderate</td>
+        </tr>
+        <tr>
+          <td>Pharma ingredients (API)</td>
+          <td>62%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar medium" style="width:62%"></div></div></td>
+          <td>&uarr;</td>
+          <td class="alt-moderate">Moderate</td>
+        </tr>
+        <tr>
+          <td>EV battery components</td>
+          <td>54%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar medium" style="width:54%"></div></div></td>
+          <td>&uarr;</td>
+          <td class="alt-growing">Growing</td>
+        </tr>
+        <tr>
+          <td>Consumer electronics</td>
+          <td>48%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar medium" style="width:48%"></div></div></td>
+          <td>&darr;</td>
+          <td class="alt-high">High</td>
+        </tr>
+        <tr>
+          <td>Steel &amp; aluminum</td>
+          <td>34%</td>
+          <td class="supply-bar-cell"><div class="supply-bar-wrap"><div class="supply-bar low" style="width:34%"></div></div></td>
+          <td>&darr;</td>
+          <td class="alt-high">High</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="method-note">Sources: Statistics Canada, USGS, industry reports. Alt. Sources rated by operator (quarterly review). Last updated: 2026-01-01.</div>
+  </div>
+
+  <!-- INSTITUTIONAL EXPOSURE -->
+  <div class="dash-card" style="grid-column: span 2;">
+    <div class="dash-card-title">University Research Partnerships with Chinese Institutions (Top 8)</div>
+    <table class="exposure-table">
+      <thead>
+        <tr>
+          <th>University</th>
+          <th>Total</th>
+          <th>Flagged</th>
+          <th>New (30d)</th>
+          <th>Trend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UBC</td>
+          <td>49</td>
+          <td><span class="flag-military">3 military-linked</span></td>
+          <td>+2</td>
+          <td>&uarr;</td>
+        </tr>
+        <tr>
+          <td>U of Toronto</td>
+          <td>41</td>
+          <td><span class="flag-military">2 military-linked</span></td>
+          <td>+1</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td>Waterloo</td>
+          <td>34</td>
+          <td><span class="flag-military">1 military-linked</span></td>
+          <td>+3</td>
+          <td>&uarr;</td>
+        </tr>
+        <tr>
+          <td>McGill</td>
+          <td>26</td>
+          <td>0</td>
+          <td>+2</td>
+          <td>&uarr;</td>
+        </tr>
+        <tr>
+          <td>Alberta</td>
+          <td>20</td>
+          <td><span class="flag-military">1 military-linked</span></td>
+          <td>-2</td>
+          <td>&darr;</td>
+        </tr>
+        <tr>
+          <td>McMaster</td>
+          <td>18</td>
+          <td>0</td>
+          <td>0</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td>Ottawa</td>
+          <td>15</td>
+          <td>0</td>
+          <td>+1</td>
+          <td>&mdash;</td>
+        </tr>
+        <tr>
+          <td>Calgary</td>
+          <td>12</td>
+          <td><span class="flag-military">1 military-linked</span></td>
+          <td>0</td>
+          <td>&mdash;</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="method-note">Source: OpenAlex API (co-authored papers, trailing 12 months). Military-linked: cross-referenced against ASPI China Defence Universities Tracker. Co-authorship does not imply impropriety. Last refreshed: 2026-01-01.</div>
+  </div>
+</div>
+
+<!-- DIPLOMATIC TIMELINE -->
+<div class="section-divider">
+  <div class="section-title">Diplomatic Timeline (Recent)</div>
+</div>
+
+<div class="dash-card" style="max-width:800px;">
+  <div class="diplo-event">
+    <span class="diplo-date">Jan 28</span>
+    <div>
+      <div class="diplo-text">Minister of Trade met Chinese Vice Commerce Minister at WEF Davos (sideline meeting). Canadian readout: "frank discussion on trade irritants." Chinese readout: "constructive exchange on mutual economic interests."</div>
+      <div class="diplo-level">Ministerial &middot; Sources: GAC + Chinese MFA</div>
+    </div>
+  </div>
+  <div class="diplo-event">
+    <span class="diplo-date">Jan 15</span>
+    <div>
+      <div class="diplo-text">GAC issues statement on South China Sea freedom of navigation. References "rules-based international order."</div>
+      <div class="diplo-level">Department &middot; Source: GAC website</div>
+    </div>
+  </div>
+  <div class="diplo-event">
+    <span class="diplo-date">Dec 20</span>
+    <div>
+      <div class="diplo-text">PM phone call with Chinese Premier re: trade irritants. PMO readout: "raised concerns about canola and consular access." Chinese readout: "leaders agreed to maintain communication channels."</div>
+      <div class="diplo-level">Head of State &middot; Sources: PMO + Xinhua</div>
+    </div>
+  </div>
+  <div class="diplo-event">
+    <span class="diplo-date">Nov 30</span>
+    <div>
+      <div class="diplo-text">New Consul General posted to Vancouver, replacing outgoing CG after standard rotation.</div>
+      <div class="diplo-level">Personnel &middot; Source: Canada Gazette</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ENTITY SECTION ===== -->
+<div class="section-divider" id="entities">
+  <div class="section-title">Entity Profiles (Sample)</div>
+</div>
+
+<div class="entity-card">
+  <div class="entity-header">
+    <div>
+      <span class="entity-name">Canola &mdash; Canada-China Trade</span>
+    </div>
+    <span class="entity-type">Commodity</span>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Description</div>
+    <div class="entity-field-value">Canadian canola (rapeseed) exports to China. Canada is the world's largest canola exporter; China is the largest single-country destination. The trade relationship has been subject to periodic disruptions since 2019.</div>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Key Data</div>
+    <div class="entity-field-value">
+      TTM exports: $4.2B &middot; Dec 2025: $312M &middot; YoY trend: declining (-24% latest month)<br>
+      Share of total Canadian canola exports going to China: ~40%
+    </div>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Prior Disruptions</div>
+    <div class="entity-field-value">
+      2019 Mar-Nov: Formal import ban following Meng Wanzhou arrest. Duration: ~8 months.<br>
+      2024 Feb: Enhanced inspection requirements. Duration: 3 weeks. Resolved without formal action.
+    </div>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Signals (30 days)</div>
+    <div class="entity-field-value">7 signals mentioning canola &middot; 2 significant &middot; 3 notable &middot; 2 routine</div>
+  </div>
+  <div class="entity-meta">
+    <span>Last updated: 2026-01-30</span>
+    <span>Version: 14</span>
+    <span>Change log: Added Dec 2025 trade data, updated disruption alert status</span>
+  </div>
+</div>
+
+<div class="entity-card">
+  <div class="entity-header">
+    <div>
+      <span class="entity-name">Ministry of Foreign Affairs</span>
+      <span class="entity-name-zh">&nbsp;&middot; 外交部</span>
+    </div>
+    <span class="entity-type">PRC Government Body</span>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Function</div>
+    <div class="entity-field-value">PRC government ministry responsible for foreign affairs and diplomatic relations. Spokesperson press conferences are the primary channel for public diplomatic signaling. Statements range from routine to highly escalatory, following well-established formulaic language patterns.</div>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Canada Touchpoints</div>
+    <div class="entity-field-value">Direct mentions of Canada: 3 in past 90 days. Indirect (Western/Asia-Pacific/Five Eyes references): 14 in past 90 days. Most recent direct mention: Dec 22, 2025 (re: consular access case).</div>
+  </div>
+  <div class="entity-field">
+    <div class="entity-field-label">Escalation Language Baseline</div>
+    <div class="entity-field-value">When addressing Canada directly, typical language level is "firm" (敦促, 要求). Elevated language (坚决反对, 严正交涉) has been used 2 times in past 12 months regarding Canada specifically.</div>
+  </div>
+  <div class="entity-meta">
+    <span>Last updated: 2026-01-30</span>
+    <span>Version: 22</span>
+    <span>Change log: Added Jan 30 press conference (indirect reference)</span>
+  </div>
+</div>
+
+<!-- ===== METHODOLOGY ===== -->
+<div class="section-divider" id="methodology">
+  <div class="section-title">Methodology</div>
+</div>
+
+<div class="dash-card" style="max-width:800px;">
+  <div class="dash-card-title">How This Site Works</div>
+  <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
+    <p style="margin-bottom:12px;">This site is <strong>fully automated</strong>. No human editors select, write, or review content before publication. No AI language models generate text. All content is either extracted from primary sources or computed by deterministic rules.</p>
+
+    <p style="margin-bottom:12px;"><strong>Data sources:</strong> Statistics Canada API, OpenParl (Hansard), LEGISinfo, Canada Gazette, CSE/CSIS/RCMP published releases, PRC Ministry of Foreign Affairs, Xinhua, People's Daily, Global Times, MOFCOM, General Administration of Customs, OpenAlex (academic partnerships), ASPI China Defence Universities Tracker, CFIA import database.</p>
+
+    <p style="margin-bottom:12px;"><strong>Translation:</strong> Chinese-language sources are translated using NLLB-200 (600M distilled), an open-source machine translation model by Meta AI running locally on this server. Translation quality is functional but imperfect. The original Chinese text is always available. No proprietary translation service is used.</p>
+
+    <p style="margin-bottom:12px;"><strong>Signal scoring:</strong> Every signal is scored 0-100 on four axes: Relevance (keyword match + entity match, 0-30), Magnitude (statistical deviation or event severity, 0-30), Novelty (deduplication against recent signals, 0-20), Source Weight (source credibility tier, 0-20). Thresholds: Significant &ge;70, Notable &ge;45, Routine &ge;25, Noise &lt;25. All keywords, weights, and thresholds are published in the source repository.</p>
+
+    <p style="margin-bottom:12px;"><strong>Escalation detection:</strong> Chinese diplomatic language is classified using keyword matching against a curated list of ~50 formulaic diplomatic phrases, tiered as elevated / firm / moderate / neutral. This is crude compared to expert analysis and misses context-dependent meaning. The keyword list is published.</p>
+
+    <p style="margin-bottom:12px;"><strong>Tension Index:</strong> Fully quantitative composite of 6 sub-indices (Trade Friction, Trade Volume, Diplomatic Frequency, Escalation Language, Parliamentary Intensity, Security Events). No editorial or AI input. Methodology and weights are published. Historical values are not retroactively adjusted.</p>
+
+    <p style="margin-bottom:12px;"><strong>Limitations:</strong> This site cannot conduct original reporting, file access-to-information requests, verify through human source networks, detect subtle diplomatic signals, or provide nuanced analysis of community impact. Machine translation may contain errors. Escalation detection is keyword-based and misses ~20-30% of what an expert would catch. Disruption detection has a higher false-positive rate than human assessment.</p>
+
+    <p style="margin-bottom:12px;"><strong>Operator:</strong> One person reviews system health weekly and performs quality audits monthly. The operator maintains keyword lists, active situations, and supply chain alt-source ratings. The operator does not write or edit signal content. Contact: operator@chinacompass.ca</p>
+
+    <p><strong>Infrastructure:</strong> Hostinger KVM2 VPS (2 vCPU, 8 GB RAM, 100 GB NVMe). Ubuntu Linux, Python pipelines, SQLite, Hugo static site generator, NGINX. Total operating cost: &lt;$20/month. Source code: published.</p>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container footer-content">
+    <div class="footer-transparency">
+      <strong>China Compass</strong> is an automated open-source intelligence monitor.
+      It aggregates, structures, translates, and scores publicly available information about
+      Canada-China relations. It does not generate text, conduct original reporting, or apply
+      editorial judgment. Every data point links to its primary source. Every score is
+      decomposable. The full methodology and source code are published.
+    </div>
+    <div style="text-align:right;">
+      <a href="#methodology">Methodology</a><br>
+      <a href="#">Source Code</a><br>
+      <a href="#">RSS Feed</a><br>
+      <a href="#">JSON API</a><br>
+      <br>
+      Pipeline status: <span style="color:var(--green);">&#9679;</span> All healthy<br>
+      Last run: 2026-01-30 06:00 ET
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
