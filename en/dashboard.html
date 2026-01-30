@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>China Compass — Dashboard</title>
+  <meta name="description" content="Canada-China tension index, supply chain exposure, institutional partnerships, and diplomatic timeline.">
+  <link rel="alternate" hreflang="en" href="/en/dashboard.html">
+  <link rel="alternate" hreflang="zh" href="/zh/dashboard.html">
+  <script>
+    (function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+    document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/en/" class="site-logo"><span class="site-logo__mark">&#x25C9;</span> China Compass</a>
+      <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+      <label for="hamburger" class="hamburger-label" aria-label="Menu"><span></span></label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/en/" class="main-nav__link">Today</a>
+        <a href="/en/signals.html" class="main-nav__link">Signals</a>
+        <a href="/en/how-china-works.html" class="main-nav__link">How China Works</a>
+        <a href="/en/business.html" class="main-nav__link">Business &amp; Markets</a>
+        <a href="/en/dashboard.html" class="main-nav__link" aria-current="page">Dashboard</a>
+        <a href="/en/entities.html" class="main-nav__link">Entities</a>
+        <a href="/en/about.html" class="main-nav__link">About</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/zh/dashboard.html" class="lang-toggle" title="切换到中文">ZH</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ============ 1. TENSION INDEX HERO ============ -->
+    <section class="section tension-hero">
+      <div class="container">
+        <div class="tension-display">
+          <div class="tension-display__score-wrap">
+            <span class="tension-display__score">6.2</span>
+            <span class="tension-display__label">Canada-China Tension Index</span>
+            <span class="badge badge-severity elevated">Elevated</span>
+          </div>
+        </div>
+
+        <div class="grid grid-4">
+          <!-- Diplomatic -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">Diplomatic</h3>
+            <span class="stat-card__value">7<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:70%"></div>
+            </div>
+          </div>
+          <!-- Military -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">Military</h3>
+            <span class="stat-card__value">5<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:50%"></div>
+            </div>
+          </div>
+          <!-- Trade -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">Trade</h3>
+            <span class="stat-card__value">7<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:70%"></div>
+            </div>
+          </div>
+          <!-- Political -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">Political</h3>
+            <span class="stat-card__value">6<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. COMPONENT DETAIL TABLE ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Component Detail</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Component</th>
+                <th>Score</th>
+                <th>Trend</th>
+                <th>Key Driver</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Diplomatic</td>
+                <td>7/10</td>
+                <td><span class="trend trend--up" aria-label="Up">&uarr;</span></td>
+                <td>Ambassador summoning incident</td>
+              </tr>
+              <tr>
+                <td>Trade</td>
+                <td>7/10</td>
+                <td><span class="trend trend--stable" aria-label="Stable">&rarr;</span></td>
+                <td>Canola/lumber tariff extensions</td>
+              </tr>
+              <tr>
+                <td>Military</td>
+                <td>5/10</td>
+                <td><span class="trend trend--up" aria-label="Up">&uarr;</span></td>
+                <td>PLA Taiwan Strait exercises</td>
+              </tr>
+              <tr>
+                <td>Political</td>
+                <td>6/10</td>
+                <td><span class="trend trend--stable" aria-label="Stable">&rarr;</span></td>
+                <td>Foreign NGO law revision</td>
+              </tr>
+              <tr>
+                <td>Technology</td>
+                <td>6/10</td>
+                <td><span class="trend trend--up" aria-label="Up">&uarr;</span></td>
+                <td>Rare earth export controls</td>
+              </tr>
+              <tr>
+                <td>Social</td>
+                <td>4/10</td>
+                <td><span class="trend trend--stable" aria-label="Stable">&rarr;</span></td>
+                <td>Student surveillance concerns</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. SUPPLY CHAIN DEPENDENCY TABLE ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Supply Chain Exposure</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Commodity</th>
+                <th>Import Share (%)</th>
+                <th>China Dependency</th>
+                <th>Risk Level</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rare Earths</td>
+                <td>82%</td>
+                <td>Critical</td>
+                <td><span class="badge badge badge-severity high">High</span></td>
+                <td>Active restrictions</td>
+              </tr>
+              <tr>
+                <td>Pharmaceuticals (API)</td>
+                <td>45%</td>
+                <td>High</td>
+                <td><span class="badge badge badge-severity elevated">Elevated</span></td>
+                <td>Monitoring</td>
+              </tr>
+              <tr>
+                <td>Solar Panels</td>
+                <td>78%</td>
+                <td>Critical</td>
+                <td><span class="badge badge badge-severity elevated">Elevated</span></td>
+                <td>Diversifying</td>
+              </tr>
+              <tr>
+                <td>Electronics Components</td>
+                <td>62%</td>
+                <td>High</td>
+                <td><span class="badge badge badge-severity moderate">Moderate</span></td>
+                <td>Stable</td>
+              </tr>
+              <tr>
+                <td>Lithium Processing</td>
+                <td>58%</td>
+                <td>High</td>
+                <td><span class="badge badge badge-severity elevated">Elevated</span></td>
+                <td>New sources sought</td>
+              </tr>
+              <tr>
+                <td>Canola (export)</td>
+                <td>40%</td>
+                <td>High</td>
+                <td><span class="badge badge badge-severity critical">Critical</span></td>
+                <td>Active ban</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. INSTITUTIONAL EXPOSURE TABLE ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Institutional Exposure: University Partnerships</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Institution</th>
+                <th>Chinese Partnerships</th>
+                <th>Confucius Institute</th>
+                <th>Research Collaborations</th>
+                <th>Risk Flag</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>University of Toronto</td>
+                <td>12</td>
+                <td>Closed 2023</td>
+                <td>45</td>
+                <td>Under review</td>
+              </tr>
+              <tr>
+                <td>UBC</td>
+                <td>8</td>
+                <td>Active</td>
+                <td>32</td>
+                <td>Monitoring</td>
+              </tr>
+              <tr>
+                <td>McGill</td>
+                <td>6</td>
+                <td>Never had</td>
+                <td>28</td>
+                <td>Low</td>
+              </tr>
+              <tr>
+                <td>Waterloo</td>
+                <td>10</td>
+                <td>Closed 2024</td>
+                <td>52</td>
+                <td>Under review</td>
+              </tr>
+              <tr>
+                <td>University of Alberta</td>
+                <td>7</td>
+                <td>Active</td>
+                <td>18</td>
+                <td>Monitoring</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. DIPLOMATIC TIMELINE ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Diplomatic Timeline (2024-2025)</h2>
+        <div class="timeline">
+          <div class="timeline__item">
+            <time class="timeline__date">Jan 2025</time>
+            <p class="timeline__text">Ambassador summoned over airspace incursion incident near Canadian Arctic.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Dec 2024</time>
+            <p class="timeline__text">Foreign Minister bilateral meeting at APEC sidelines in Lima.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Nov 2024</time>
+            <p class="timeline__text">CSIS report on foreign interference tabled in Parliament.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Oct 2024</time>
+            <p class="timeline__text">Canola trade negotiations stall after new tariff demands.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Sep 2024</time>
+            <p class="timeline__text">Two Canadians detained in consular case; consular access requested.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Jul 2024</time>
+            <p class="timeline__text">Critical minerals export restrictions announced by China, targeting rare earths.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">May 2024</time>
+            <p class="timeline__text">Huawei 5G ban deadline set for June 2025; telecom carriers begin compliance.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Mar 2024</time>
+            <p class="timeline__text">Prime Minister meets President Xi at G20 sidelines; bilateral reset discussed.</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">Jan 2024</time>
+            <p class="timeline__text">New Indo-Pacific strategy funding announced: $2.3B over five years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. LEGISLATIVE TRACKER ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Legislative Tracker</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Bill</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Relevance</th>
+                <th>Last Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bill C-27</td>
+                <td>AIDA (AI &amp; Data Act)</td>
+                <td>Committee</td>
+                <td>Technology</td>
+                <td>Jan 15, 2025</td>
+              </tr>
+              <tr>
+                <td>Bill S-7</td>
+                <td>Foreign Agent Registry</td>
+                <td>2nd Reading</td>
+                <td>Political</td>
+                <td>Dec 10, 2024</td>
+              </tr>
+              <tr>
+                <td>Motion M-62</td>
+                <td>Uyghur Genocide Recognition</td>
+                <td>Passed</td>
+                <td>Diplomatic</td>
+                <td>Nov 28, 2024</td>
+              </tr>
+              <tr>
+                <td>Bill C-34</td>
+                <td>Investment Canada Act Reform</td>
+                <td>Royal Assent</td>
+                <td>Economic</td>
+                <td>Oct 2024</td>
+              </tr>
+              <tr>
+                <td>Bill C-70</td>
+                <td>Foreign Interference</td>
+                <td>Committee</td>
+                <td>Political</td>
+                <td>Jan 20, 2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. HANSARD ANALYTICS ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">Parliamentary Mentions: China</h2>
+        <div class="grid grid-3">
+          <div class="stat-card">
+            <h3 class="stat-card__title">This Session</h3>
+            <span class="stat-card__value">847</span>
+            <span class="stat-card__label">mentions</span>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-card__title">This Month</h3>
+            <span class="stat-card__value">94</span>
+            <span class="stat-card__label">mentions</span>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-card__title">Top Topic</h3>
+            <span class="stat-card__value">Foreign interference</span>
+            <span class="stat-card__label">34%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-section">
+        <h4 class="footer-section__title">China Compass</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/">Today</a></li>
+          <li><a href="/en/signals.html">Signals</a></li>
+          <li><a href="/en/dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">Learn</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/how-china-works.html">How China Works</a></li>
+          <li><a href="/en/business.html">Business &amp; Markets</a></li>
+          <li><a href="/en/entities.html">Entities</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">About</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/about.html">Methodology</a></li>
+          <li><a href="/en/about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2025 China Compass. Open-source intelligence for the Canada-China relationship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme-toggle.js"></script>
+</body>
+</html>

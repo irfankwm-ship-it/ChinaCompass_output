@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国罗盘 — 数据面板</title>
+  <meta name="description" content="加中紧张指数、供应链风险敞口、机构合作和外交时间线。">
+  <link rel="alternate" hreflang="en" href="/en/dashboard.html">
+  <link rel="alternate" hreflang="zh" href="/zh/dashboard.html">
+  <script>
+    (function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+    document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/zh/" class="site-logo"><span class="site-logo__mark">&#x25C9;</span> 中国罗盘</a>
+      <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+      <label for="hamburger" class="hamburger-label" aria-label="菜单"><span></span></label>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/zh/" class="main-nav__link">今日</a>
+        <a href="/zh/signals.html" class="main-nav__link">信号</a>
+        <a href="/zh/how-china-works.html" class="main-nav__link">读懂中国</a>
+        <a href="/zh/business.html" class="main-nav__link">商业与市场</a>
+        <a href="/zh/dashboard.html" class="main-nav__link" aria-current="page">数据面板</a>
+        <a href="/zh/entities.html" class="main-nav__link">实体目录</a>
+        <a href="/zh/about.html" class="main-nav__link">关于</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/en/dashboard.html" class="lang-toggle" title="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换暗色模式">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ============ 1. 紧张指数主区 ============ -->
+    <section class="section tension-hero">
+      <div class="container">
+        <div class="tension-display">
+          <div class="tension-display__score-wrap">
+            <span class="tension-display__score">6.2</span>
+            <span class="tension-display__label">加中紧张指数</span>
+            <span class="badge badge-severity elevated">升高</span>
+          </div>
+        </div>
+
+        <div class="grid grid-4">
+          <!-- 外交 -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">外交</h3>
+            <span class="stat-card__value">7<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:70%"></div>
+            </div>
+          </div>
+          <!-- 军事 -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">军事</h3>
+            <span class="stat-card__value">5<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:50%"></div>
+            </div>
+          </div>
+          <!-- 贸易 -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">贸易</h3>
+            <span class="stat-card__value">7<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:70%"></div>
+            </div>
+          </div>
+          <!-- 政治 -->
+          <div class="stat-card">
+            <h3 class="stat-card__title">政治</h3>
+            <span class="stat-card__value">6<span class="stat-card__max">/10</span></span>
+            <div class="progress-bar">
+              <div class="progress-bar__fill" style="width:60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. 分项详细表 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">分项详情</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>分项</th>
+                <th>评分</th>
+                <th>趋势</th>
+                <th>关键驱动因素</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>外交</td>
+                <td>7/10</td>
+                <td><span class="trend trend--up" aria-label="上升">&uarr;</span></td>
+                <td>召见大使事件</td>
+              </tr>
+              <tr>
+                <td>贸易</td>
+                <td>7/10</td>
+                <td><span class="trend trend--stable" aria-label="稳定">&rarr;</span></td>
+                <td>油菜籽/木材关税延期</td>
+              </tr>
+              <tr>
+                <td>军事</td>
+                <td>5/10</td>
+                <td><span class="trend trend--up" aria-label="上升">&uarr;</span></td>
+                <td>解放军台湾海峡演习</td>
+              </tr>
+              <tr>
+                <td>政治</td>
+                <td>6/10</td>
+                <td><span class="trend trend--stable" aria-label="稳定">&rarr;</span></td>
+                <td>境外非政府组织法修订</td>
+              </tr>
+              <tr>
+                <td>科技</td>
+                <td>6/10</td>
+                <td><span class="trend trend--up" aria-label="上升">&uarr;</span></td>
+                <td>稀土出口管制</td>
+              </tr>
+              <tr>
+                <td>社会</td>
+                <td>4/10</td>
+                <td><span class="trend trend--stable" aria-label="稳定">&rarr;</span></td>
+                <td>留学生监控问题</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. 供应链依赖表 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">供应链风险敞口</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>商品</th>
+                <th>进口份额 (%)</th>
+                <th>对华依赖度</th>
+                <th>风险等级</th>
+                <th>现状</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>稀土</td>
+                <td>82%</td>
+                <td>关键</td>
+                <td><span class="badge badge badge-severity high">高</span></td>
+                <td>限制措施生效中</td>
+              </tr>
+              <tr>
+                <td>药品（原料药）</td>
+                <td>45%</td>
+                <td>高</td>
+                <td><span class="badge badge-severity elevated">升高</span></td>
+                <td>监测中</td>
+              </tr>
+              <tr>
+                <td>太阳能电池板</td>
+                <td>78%</td>
+                <td>关键</td>
+                <td><span class="badge badge-severity elevated">升高</span></td>
+                <td>多元化推进中</td>
+              </tr>
+              <tr>
+                <td>电子元器件</td>
+                <td>62%</td>
+                <td>高</td>
+                <td><span class="badge badge badge-severity moderate">中等</span></td>
+                <td>稳定</td>
+              </tr>
+              <tr>
+                <td>锂加工</td>
+                <td>58%</td>
+                <td>高</td>
+                <td><span class="badge badge-severity elevated">升高</span></td>
+                <td>寻找新来源</td>
+              </tr>
+              <tr>
+                <td>油菜籽（出口）</td>
+                <td>40%</td>
+                <td>高</td>
+                <td><span class="badge badge badge-severity critical">严重</span></td>
+                <td>禁令生效中</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. 机构风险敞口表 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">机构风险敞口：大学合作</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>院校</th>
+                <th>中方合作项目</th>
+                <th>孔子学院</th>
+                <th>科研合作</th>
+                <th>风险标记</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>多伦多大学</td>
+                <td>12</td>
+                <td>2023年关闭</td>
+                <td>45</td>
+                <td>审查中</td>
+              </tr>
+              <tr>
+                <td>不列颠哥伦比亚大学</td>
+                <td>8</td>
+                <td>运营中</td>
+                <td>32</td>
+                <td>监测中</td>
+              </tr>
+              <tr>
+                <td>麦吉尔大学</td>
+                <td>6</td>
+                <td>从未设立</td>
+                <td>28</td>
+                <td>低</td>
+              </tr>
+              <tr>
+                <td>滑铁卢大学</td>
+                <td>10</td>
+                <td>2024年关闭</td>
+                <td>52</td>
+                <td>审查中</td>
+              </tr>
+              <tr>
+                <td>阿尔伯塔大学</td>
+                <td>7</td>
+                <td>运营中</td>
+                <td>18</td>
+                <td>监测中</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. 外交时间线 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">外交时间线（2024-2025）</h2>
+        <div class="timeline">
+          <div class="timeline__item">
+            <time class="timeline__date">2025年1月</time>
+            <p class="timeline__text">因加拿大北极地区领空入侵事件召见大使。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年12月</time>
+            <p class="timeline__text">外长在利马亚太经合组织峰会期间举行双边会晤。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年11月</time>
+            <p class="timeline__text">加拿大安全情报局（CSIS）外国干预报告提交国会。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年10月</time>
+            <p class="timeline__text">油菜籽贸易谈判因新关税要求陷入僵局。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年9月</time>
+            <p class="timeline__text">两名加拿大公民被拘留；已提出领事探视请求。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年7月</time>
+            <p class="timeline__text">中国宣布关键矿产出口限制，针对稀土资源。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年5月</time>
+            <p class="timeline__text">华为5G禁令最后期限定于2025年6月；电信运营商开始合规。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年3月</time>
+            <p class="timeline__text">总理在G20峰会间隙会见习近平主席，讨论双边关系重启。</p>
+          </div>
+          <div class="timeline__item">
+            <time class="timeline__date">2024年1月</time>
+            <p class="timeline__text">宣布新印太战略拨款：五年23亿加元。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. 立法追踪 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">立法追踪</h2>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>法案</th>
+                <th>名称</th>
+                <th>状态</th>
+                <th>相关领域</th>
+                <th>最新动态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>C-27号法案</td>
+                <td>AIDA（人工智能与数据法案）</td>
+                <td>委员会审议</td>
+                <td>科技</td>
+                <td>2025年1月15日</td>
+              </tr>
+              <tr>
+                <td>S-7号法案</td>
+                <td>外国代理人登记</td>
+                <td>二读</td>
+                <td>政治</td>
+                <td>2024年12月10日</td>
+              </tr>
+              <tr>
+                <td>M-62号动议</td>
+                <td>维吾尔族种族灭绝认定</td>
+                <td>已通过</td>
+                <td>外交</td>
+                <td>2024年11月28日</td>
+              </tr>
+              <tr>
+                <td>C-34号法案</td>
+                <td>加拿大投资法改革</td>
+                <td>御准</td>
+                <td>经济</td>
+                <td>2024年10月</td>
+              </tr>
+              <tr>
+                <td>C-70号法案</td>
+                <td>反外国干预</td>
+                <td>委员会审议</td>
+                <td>政治</td>
+                <td>2025年1月20日</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. 国会议事录分析 ============ -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-header__title">国会提及次数：中国</h2>
+        <div class="grid grid-3">
+          <div class="stat-card">
+            <h3 class="stat-card__title">本届会期</h3>
+            <span class="stat-card__value">847</span>
+            <span class="stat-card__label">次提及</span>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-card__title">本月</h3>
+            <span class="stat-card__value">94</span>
+            <span class="stat-card__label">次提及</span>
+          </div>
+          <div class="stat-card">
+            <h3 class="stat-card__title">热门话题</h3>
+            <span class="stat-card__value">外国干预</span>
+            <span class="stat-card__label">34%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-section">
+        <h4 class="footer-section__title">中国罗盘</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/">今日</a></li>
+          <li><a href="/zh/signals.html">信号</a></li>
+          <li><a href="/zh/dashboard.html">数据面板</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">了解</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/how-china-works.html">读懂中国</a></li>
+          <li><a href="/zh/business.html">商业与市场</a></li>
+          <li><a href="/zh/entities.html">实体目录</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">关于</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/about.html">方法论</a></li>
+          <li><a href="/zh/about.html#contact">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2025 中国罗盘。加中关系开源情报。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme-toggle.js"></script>
+</body>
+</html>

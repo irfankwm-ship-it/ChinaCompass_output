@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>China Compass — Business &amp; Markets</title>
+  <meta name="description" content="China market data, sector analysis, and Canada-China trade intelligence.">
+  <link rel="alternate" hreflang="en" href="/en/business.html">
+  <link rel="alternate" hreflang="zh" href="/zh/business.html">
+  <!-- Prevent flash: set theme before paint -->
+  <script>
+    (function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+    document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/en/" class="site-logo">
+        <span class="site-logo__mark">&#x25C9;</span> China Compass
+      </a>
+
+      <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+      <label for="hamburger" class="hamburger-label" aria-label="Menu">
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/en/" class="main-nav__link">Today</a>
+        <a href="/en/signals.html" class="main-nav__link">Signals</a>
+        <a href="/en/how-china-works.html" class="main-nav__link">How China Works</a>
+        <a href="/en/business.html" class="main-nav__link" aria-current="page">Business &amp; Markets</a>
+        <a href="/en/dashboard.html" class="main-nav__link">Dashboard</a>
+        <a href="/en/entities.html" class="main-nav__link">Entities</a>
+        <a href="/en/about.html" class="main-nav__link">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/zh/business.html" class="lang-toggle" title="切换到中文">ZH</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ===== HERO STRIP ===== -->
+    <section class="hero-strip">
+      <div class="container">
+        <h1 class="hero-strip__title">Business &amp; Markets</h1>
+        <p class="hero-strip__subtitle">China market data, sector analysis, and Canada-China trade intelligence</p>
+      </div>
+    </section>
+
+    <!-- ===== MARKET INDEX STRIP ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-4">
+          <!-- Shanghai Composite -->
+          <div class="market-card">
+            <div class="market-card__name">Shanghai Composite (SSE)</div>
+            <div class="market-card__value">3,128.55</div>
+            <div class="market-card__change up">+1.2%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,28 15,26 30,24 45,22 55,25 65,20 80,16 100,8"/>
+            </svg>
+          </div>
+          <!-- Shenzhen Component -->
+          <div class="market-card">
+            <div class="market-card__name">Shenzhen Component (SZSE)</div>
+            <div class="market-card__value">10,245.80</div>
+            <div class="market-card__change down">-0.4%</div>
+            <svg class="market-card__sparkline down" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,12 15,10 30,14 45,16 55,13 65,18 80,20 100,22"/>
+            </svg>
+          </div>
+          <!-- Hang Seng -->
+          <div class="market-card">
+            <div class="market-card__name">Hang Seng (HSI)</div>
+            <div class="market-card__value">16,589.33</div>
+            <div class="market-card__change up">+0.8%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,26 15,24 30,22 45,18 55,20 65,16 80,12 100,10"/>
+            </svg>
+          </div>
+          <!-- CSI 300 -->
+          <div class="market-card">
+            <div class="market-card__name">CSI 300</div>
+            <div class="market-card__value">3,742.10</div>
+            <div class="market-card__change up">+0.6%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,22 15,20 30,21 45,19 55,18 65,17 80,16 100,14"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARKET SIGNALS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Market Signals</h2>
+        </div>
+
+        <!-- Signal 1 -->
+        <div class="signal-card" data-severity="elevated" data-category="trade">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">China Extends Anti-Dumping Tariffs on Canadian Lumber</h3>
+            <span class="badge badge-severity elevated">Elevated</span>
+            <span class="badge badge-category trade">Trade</span>
+          </div>
+          <div class="signal-card__body">
+            MOFCOM announced a five-year extension of anti-dumping duties on Canadian softwood lumber imports, maintaining tariffs of 8.5&ndash;22.1% on major producers.
+          </div>
+          <div class="signal-card__meta">
+            <span>Source: MOFCOM Notice #12-2025</span>
+            <span>&middot;</span>
+            <span>Jan 29, 2025</span>
+          </div>
+        </div>
+
+        <!-- Signal 2 -->
+        <div class="signal-card" data-severity="elevated" data-category="technology">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">China Restricts Rare Earth Exports Citing National Security</h3>
+            <span class="badge badge-severity elevated">Elevated</span>
+            <span class="badge badge-category technology">Technology</span>
+          </div>
+          <div class="signal-card__body">
+            New export controls on gallium, germanium, and other critical minerals take effect immediately, citing national security concerns. Industry analysts expect supply chain disruptions across semiconductor and defense sectors.
+          </div>
+          <div class="signal-card__meta">
+            <span>Source: MOFCOM</span>
+            <span>&middot;</span>
+            <span>Jan 28, 2025</span>
+          </div>
+        </div>
+
+        <!-- Signal 3 -->
+        <div class="signal-card" data-severity="moderate" data-category="economic">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">PBOC Cuts Reserve Requirement Ratio by 50 Basis Points</h3>
+            <span class="badge badge-severity moderate">Moderate</span>
+            <span class="badge badge-category economic">Economic</span>
+          </div>
+          <div class="signal-card__body">
+            The People's Bank of China reduced the reserve requirement ratio by 50 basis points, releasing approximately &yen;1.2 trillion in liquidity. The move signals continued efforts to stimulate economic growth amid slowing domestic demand.
+          </div>
+          <div class="signal-card__meta">
+            <span>Source: PBOC</span>
+            <span>&middot;</span>
+            <span>Jan 27, 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTOR BREAKDOWN ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Sector Breakdown</h2>
+        </div>
+        <div class="grid grid-3">
+          <!-- Technology -->
+          <div class="card">
+            <h4 class="card__title">Technology</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Tech Index</div>
+              <div class="stat-card__value">4,521.30</div>
+              <div class="market-card__change up">+2.1%</div>
+            </div>
+          </div>
+          <!-- Real Estate -->
+          <div class="card">
+            <h4 class="card__title">Real Estate</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Real Estate</div>
+              <div class="stat-card__value">1,823.45</div>
+              <div class="market-card__change down">-3.2%</div>
+            </div>
+          </div>
+          <!-- Energy -->
+          <div class="card">
+            <h4 class="card__title">Energy</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Energy</div>
+              <div class="stat-card__value">2,156.80</div>
+              <div class="market-card__change up">+0.4%</div>
+            </div>
+          </div>
+          <!-- Finance -->
+          <div class="card">
+            <h4 class="card__title">Finance</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Finance</div>
+              <div class="stat-card__value">5,892.10</div>
+              <div class="market-card__change down">-0.1%</div>
+            </div>
+          </div>
+          <!-- Consumer -->
+          <div class="card">
+            <h4 class="card__title">Consumer</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Consumer</div>
+              <div class="stat-card__value">3,445.60</div>
+              <div class="market-card__change up">+1.5%</div>
+            </div>
+          </div>
+          <!-- Healthcare -->
+          <div class="card">
+            <h4 class="card__title">Healthcare</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">CSI Healthcare</div>
+              <div class="stat-card__value">2,987.25</div>
+              <div class="market-card__change up">+0.8%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOP MOVERS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Top Movers</h2>
+        </div>
+        <div class="grid grid-2">
+          <!-- Gainers -->
+          <div class="card">
+            <h4 class="card__title">Gainers</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price (CNY)</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CATL (300750)</td>
+                  <td>245.80</td>
+                  <td class="up">+5.2%</td>
+                </tr>
+                <tr>
+                  <td>BYD (002594)</td>
+                  <td>312.40</td>
+                  <td class="up">+4.1%</td>
+                </tr>
+                <tr>
+                  <td>Kweichow Moutai (600519)</td>
+                  <td>1,745.00</td>
+                  <td class="up">+3.8%</td>
+                </tr>
+                <tr>
+                  <td>LONGi Green (601012)</td>
+                  <td>28.90</td>
+                  <td class="up">+3.5%</td>
+                </tr>
+                <tr>
+                  <td>Mindray Medical (300760)</td>
+                  <td>312.50</td>
+                  <td class="up">+2.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Losers -->
+          <div class="card">
+            <h4 class="card__title">Losers</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price (CNY)</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Country Garden (2007.HK)</td>
+                  <td>0.82</td>
+                  <td class="down">-8.3%</td>
+                </tr>
+                <tr>
+                  <td>Evergrande (3333.HK)</td>
+                  <td>0.15</td>
+                  <td class="down">-6.7%</td>
+                </tr>
+                <tr>
+                  <td>Alibaba (9988.HK)</td>
+                  <td>78.50</td>
+                  <td class="down">-2.8%</td>
+                </tr>
+                <tr>
+                  <td>JD.com (9618.HK)</td>
+                  <td>112.30</td>
+                  <td class="down">-2.1%</td>
+                </tr>
+                <tr>
+                  <td>Pinduoduo (PDD)</td>
+                  <td>98.60</td>
+                  <td class="down">-1.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IPO WATCH ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">IPO Watch</h2>
+        </div>
+        <div class="card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Exchange</th>
+                <th>Sector</th>
+                <th>Expected Date</th>
+                <th>Size (est.)</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SinoChip Semiconductor</td>
+                <td>SSE STAR</td>
+                <td>Technology</td>
+                <td>Feb 15, 2025</td>
+                <td>&yen;2.8B</td>
+                <td><span class="badge badge-severity moderate">Approved</span></td>
+              </tr>
+              <tr>
+                <td>GreenPower EV</td>
+                <td>SZSE ChiNext</td>
+                <td>Automotive</td>
+                <td>Feb 28, 2025</td>
+                <td>&yen;1.5B</td>
+                <td><span class="badge badge-category trade">Filing</span></td>
+              </tr>
+              <tr>
+                <td>CloudMind AI</td>
+                <td>HKEX</td>
+                <td>Technology</td>
+                <td>Mar 2025</td>
+                <td>HK$4.2B</td>
+                <td><span class="badge badge-category political">Pending</span></td>
+              </tr>
+              <tr>
+                <td>BioGenesis Pharma</td>
+                <td>SSE</td>
+                <td>Healthcare</td>
+                <td>Q1 2025</td>
+                <td>&yen;3.1B</td>
+                <td><span class="badge badge-severity moderate">Approved</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REGULATORY ACTIONS ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Regulatory Actions</h2>
+        </div>
+
+        <!-- Regulatory Signal 1 -->
+        <div class="signal-card" data-severity="elevated" data-category="legal">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">SAMR Launches Antitrust Review of Cloud Computing Sector</h3>
+            <span class="badge badge-severity elevated">Elevated</span>
+            <span class="badge badge-category legal">Legal</span>
+          </div>
+          <div class="signal-card__body">
+            The State Administration for Market Regulation has initiated an antitrust investigation targeting Alibaba Cloud, Tencent Cloud, and Huawei Cloud market practices. The review focuses on pricing strategies, data portability, and market dominance.
+          </div>
+          <div class="signal-card__meta">
+            <span>Source: SAMR</span>
+            <span>&middot;</span>
+            <span>Jan 26, 2025</span>
+          </div>
+        </div>
+
+        <!-- Regulatory Signal 2 -->
+        <div class="signal-card" data-severity="moderate" data-category="technology">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">CAC Issues New Rules on AI-Generated Content</h3>
+            <span class="badge badge-severity moderate">Moderate</span>
+            <span class="badge badge-category technology">Technology</span>
+          </div>
+          <div class="signal-card__body">
+            The Cyberspace Administration of China has published new regulations requiring registration for all generative AI services operating within China. The rules mandate content labeling, algorithm transparency, and user identity verification, effective March 2025.
+          </div>
+          <div class="signal-card__meta">
+            <span>Source: CAC</span>
+            <span>&middot;</span>
+            <span>Jan 25, 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CANADA-CHINA TRADE DASHBOARD ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">Canada-China Trade</h2>
+        </div>
+
+        <!-- Trade Stats -->
+        <div class="grid grid-3">
+          <div class="stat-card">
+            <div class="stat-card__label">Total Trade (2024)</div>
+            <div class="stat-card__value">$89.4B</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">Trade Deficit</div>
+            <div class="stat-card__value">$52.1B</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">YoY Change</div>
+            <div class="stat-card__value down">-2.3%</div>
+          </div>
+        </div>
+
+        <!-- Commodity Table -->
+        <div class="card" style="margin-top:var(--space-4);">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Commodity</th>
+                <th>Export Value (CAD)</th>
+                <th>Import Value (CAD)</th>
+                <th>Balance</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Energy Products</td>
+                <td>$8.2B</td>
+                <td>$0.3B</td>
+                <td class="up">+$7.9B</td>
+                <td>Stable</td>
+              </tr>
+              <tr>
+                <td>Canola / Oilseeds</td>
+                <td>$2.1B</td>
+                <td>$0.0B</td>
+                <td class="up">+$2.1B</td>
+                <td class="disruption-text">Disrupted</td>
+              </tr>
+              <tr>
+                <td>Forest Products</td>
+                <td>$1.8B</td>
+                <td>$0.1B</td>
+                <td class="up">+$1.7B</td>
+                <td>Declining</td>
+              </tr>
+              <tr>
+                <td>Machinery</td>
+                <td>$0.9B</td>
+                <td>$18.4B</td>
+                <td class="down">-$17.5B</td>
+                <td>Growing</td>
+              </tr>
+              <tr>
+                <td>Electronics</td>
+                <td>$0.4B</td>
+                <td>$14.2B</td>
+                <td class="down">-$13.8B</td>
+                <td>Stable</td>
+              </tr>
+              <tr>
+                <td>Minerals &amp; Metals</td>
+                <td>$3.4B</td>
+                <td>$2.1B</td>
+                <td class="up">+$1.3B</td>
+                <td>Volatile</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Disruption Alert -->
+        <div class="disruption-banner" style="margin-top:var(--space-4);">
+          <div class="disruption-banner__icon">&#9888;</div>
+          <div class="disruption-banner__content">
+            <div class="disruption-banner__title">Active Disruption: Canola Export Restrictions</div>
+            <div class="disruption-banner__body">China has suspended canola seed imports from two major Canadian processors. Bilateral negotiations are ongoing but no resolution timeline has been announced. Canadian canola exporters are advised to monitor MOFCOM and CFIA notices.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-section">
+        <h4 class="footer-section__title">China Compass</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/">Today</a></li>
+          <li><a href="/en/signals.html">Signals</a></li>
+          <li><a href="/en/dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">Learn</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/how-china-works.html">How China Works</a></li>
+          <li><a href="/en/business.html">Business &amp; Markets</a></li>
+          <li><a href="/en/entities.html">Entities</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">About</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/about.html">Methodology</a></li>
+          <li><a href="/en/about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2025 China Compass. Open-source intelligence for the Canada-China relationship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme-toggle.js"></script>
+</body>
+</html>

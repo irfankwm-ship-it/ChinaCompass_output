@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>China Compass — Signals</title>
+  <meta name="description" content="Full signal feed — filter Canada-China diplomatic, trade, military, and political signals by category and severity.">
+  <link rel="alternate" hreflang="en" href="/en/signals.html">
+  <link rel="alternate" hreflang="zh" href="/zh/signals.html">
+  <!-- Prevent flash: set theme before paint -->
+  <script>
+    (function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+    document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/en/" class="site-logo">
+        <span class="site-logo__mark">&#x25C9;</span> China Compass
+      </a>
+
+      <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+      <label for="hamburger" class="hamburger-label" aria-label="Menu">
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/en/" class="main-nav__link">Today</a>
+        <a href="/en/signals.html" class="main-nav__link" aria-current="page">Signals</a>
+        <a href="/en/how-china-works.html" class="main-nav__link">How China Works</a>
+        <a href="/en/business.html" class="main-nav__link">Business &amp; Markets</a>
+        <a href="/en/dashboard.html" class="main-nav__link">Dashboard</a>
+        <a href="/en/entities.html" class="main-nav__link">Entities</a>
+        <a href="/en/about.html" class="main-nav__link">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/zh/signals.html" class="lang-toggle" title="切换到中文">ZH</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ===== HERO STRIP ===== -->
+    <section class="hero-strip">
+      <div class="container">
+        <h1 class="hero-strip__title">Signal Feed</h1>
+        <p class="hero-strip__subtitle">All tracked signals &mdash; filter by category or severity</p>
+      </div>
+    </section>
+
+    <!-- ===== FILTER BAR ===== -->
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-group">
+            <span class="filter-group__label">Category</span>
+            <div class="filter-pills">
+              <button class="filter-pill active" data-filter-group="category" data-filter="all">All</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="diplomatic">Diplomatic</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="trade">Trade</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="military">Military</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="technology">Technology</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="political">Political</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="economic">Economic</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="social">Social</button>
+              <button class="filter-pill" data-filter-group="category" data-filter="legal">Legal</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Severity</span>
+            <div class="filter-pills">
+              <button class="filter-pill active" data-filter-group="severity" data-filter="all">All</button>
+              <button class="filter-pill" data-filter-group="severity" data-filter="critical">Critical</button>
+              <button class="filter-pill" data-filter-group="severity" data-filter="high">High</button>
+              <button class="filter-pill" data-filter-group="severity" data-filter="elevated">Elevated</button>
+              <button class="filter-pill" data-filter-group="severity" data-filter="moderate">Moderate</button>
+              <button class="filter-pill" data-filter-group="severity" data-filter="low">Low</button>
+            </div>
+          </div>
+          <div class="filter-count">
+            Showing <span id="signal-count">7</span> signals
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIGNAL FEED + SIDEBAR ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-sidebar">
+          <!-- Main: Signal Cards -->
+          <div>
+
+            <!-- Signal 1 -->
+            <div class="signal-card" data-severity="high" data-category="diplomatic">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">Canada Summons Chinese Ambassador Over Airspace Incursion</h3>
+                <span class="badge badge-severity high">High</span>
+                <span class="badge badge-category diplomatic">Diplomatic</span>
+              </div>
+              <div class="signal-card__body">
+                The Ministry of Foreign Affairs summoned the Chinese ambassador following reports of an unauthorized surveillance balloon entering Canadian Arctic airspace. This marks the third such incident in 18 months.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: Global Affairs Canada</span>
+                <span>&middot;</span>
+                <span>Jan 30, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>Likely escalation in parliamentary debate on NORAD modernization funding.</dd>
+                <dt>What to Watch</dt>
+                <dd>PM statement expected today; allied coordination with Five Eyes partners.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 2 -->
+            <div class="signal-card" data-severity="elevated" data-category="trade">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">China Extends Anti-Dumping Tariffs on Canadian Lumber</h3>
+                <span class="badge badge-severity elevated">Elevated</span>
+                <span class="badge badge-category trade">Trade</span>
+              </div>
+              <div class="signal-card__body">
+                MOFCOM announced a five-year extension of anti-dumping duties on Canadian softwood lumber imports, maintaining tariffs of 8.5-22.1% on major producers.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: MOFCOM Notice #12-2025</span>
+                <span>&middot;</span>
+                <span>Jan 29, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>BC forestry sector faces continued export headwinds; diversification to other Asian markets accelerating.</dd>
+                <dt>What to Watch</dt>
+                <dd>Canada may file WTO dispute; BC Premier response pending.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 3 -->
+            <div class="signal-card" data-severity="moderate" data-category="political">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">NPC Standing Committee Passes Revised Foreign NGO Law</h3>
+                <span class="badge badge-severity moderate">Moderate</span>
+                <span class="badge badge-category political">Political</span>
+              </div>
+              <div class="signal-card__body">
+                Revisions tighten registration requirements for foreign NGOs operating in China, adding new reporting mandates and restricting activities in border regions.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: Xinhua</span>
+                <span>&middot;</span>
+                <span>Jan 28, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>Canadian educational and humanitarian organizations may face operational constraints.</dd>
+                <dt>What to Watch</dt>
+                <dd>Implementation timeline and scope of enforcement in Xinjiang and Tibet.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 4 -->
+            <div class="signal-card" data-severity="critical" data-category="military">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">PLA Navy Exercises Near Taiwan Strait Intensify</h3>
+                <span class="badge badge-severity critical">Critical</span>
+                <span class="badge badge-category military">Military</span>
+              </div>
+              <div class="signal-card__body">
+                The PLA Navy has deployed 12 naval vessels and conducted 45 aircraft sorties near the Taiwan Strait in the past 72 hours, marking the highest activity level since August 2022. Exercises include live-fire drills and anti-submarine warfare simulations with significant implications for Pacific shipping lanes.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: Taiwan Ministry of National Defense / OSINT</span>
+                <span>&middot;</span>
+                <span>Jan 30, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>Pacific shipping route disruptions possible; HMCS Ottawa currently deployed in the region. Canadian Forces may increase Indo-Pacific surveillance posture.</dd>
+                <dt>What to Watch</dt>
+                <dd>Duration of exercises; US Navy carrier group movements; diplomatic statements from G7 allies.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 5 -->
+            <div class="signal-card" data-severity="elevated" data-category="technology">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">China Restricts Rare Earth Exports Citing National Security</h3>
+                <span class="badge badge-severity elevated">Elevated</span>
+                <span class="badge badge-category technology">Technology</span>
+              </div>
+              <div class="signal-card__body">
+                Beijing imposed new export controls on gallium and germanium, two critical minerals essential for semiconductor manufacturing. The restrictions, citing national security concerns, take effect February 15 and require case-by-case government approval for all exports.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: MOFCOM / State Council</span>
+                <span>&middot;</span>
+                <span>Jan 29, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>Canadian semiconductor supply chain exposed; critical minerals strategy acceleration likely. Potential opportunity for Canadian rare earth mining sector.</dd>
+                <dt>What to Watch</dt>
+                <dd>Allied response and coordination on alternative supply chains; Canadian Critical Minerals Strategy update expected Q2.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 6 -->
+            <div class="signal-card" data-severity="moderate" data-category="economic">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">PBOC Cuts Reserve Requirement Ratio by 50 Basis Points</h3>
+                <span class="badge badge-severity moderate">Moderate</span>
+                <span class="badge badge-category economic">Economic</span>
+              </div>
+              <div class="signal-card__body">
+                The People's Bank of China announced a 50 basis point cut to the reserve requirement ratio for commercial banks, releasing approximately 1 trillion yuan into the financial system. The move signals deepening concern about domestic economic slowdown and is expected to increase yuan depreciation pressure.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: PBOC / Reuters</span>
+                <span>&middot;</span>
+                <span>Jan 28, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>Yuan depreciation may affect Canadian exporters' competitiveness; Bank of Canada monitoring capital flow implications.</dd>
+                <dt>What to Watch</dt>
+                <dd>Follow-on rate cuts; impact on Chinese demand for Canadian commodities; CAD/CNY exchange rate movements.</dd>
+              </dl>
+            </div>
+
+            <!-- Signal 7 -->
+            <div class="signal-card" data-severity="low" data-category="social">
+              <div class="signal-card__header">
+                <h3 class="signal-card__title">Chinese Students in Canada Report Increased Surveillance Concerns</h3>
+                <span class="badge badge-severity low">Low</span>
+                <span class="badge badge-category social">Social</span>
+              </div>
+              <div class="signal-card__body">
+                A CSIS briefing to university administrators highlighted growing reports from Chinese students in Canada who say they face monitoring and intimidation from Chinese state actors. Multiple universities are reviewing campus safety protocols in response.
+              </div>
+              <div class="signal-card__meta">
+                <span>Source: CSIS / Globe and Mail</span>
+                <span>&middot;</span>
+                <span>Jan 27, 2025</span>
+              </div>
+              <dl class="signal-card__implications">
+                <dt>Canada Impact</dt>
+                <dd>University administrations implementing new support measures; potential policy review on foreign interference in academic institutions.</dd>
+                <dt>What to Watch</dt>
+                <dd>Parliamentary committee hearings on campus foreign interference; university policy responses.</dd>
+              </dl>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <aside>
+            <!-- Active Situations -->
+            <div class="sidebar-module">
+              <h3 class="sidebar-module__title">Active Situations</h3>
+              <ul class="sidebar-module__list">
+                <li><strong>Canola Export Ban</strong> &mdash; Day 342 <span class="badge badge-severity high">High</span></li>
+                <li><strong>Huawei 5G Phase-Out</strong> &mdash; Deadline June 2025 <span class="badge badge-severity elevated">Elevated</span></li>
+                <li><strong>Consular Detentions</strong> &mdash; 2 Canadians held <span class="badge badge-severity high">High</span></li>
+                <li><strong>Critical Minerals Dispute</strong> &mdash; WTO filing pending <span class="badge badge-severity moderate">Moderate</span></li>
+              </ul>
+            </div>
+
+            <!-- Disruption Alerts -->
+            <div class="sidebar-module">
+              <h3 class="sidebar-module__title">Disruption Alerts</h3>
+              <ul class="sidebar-module__list">
+                <li><strong>Canola Ban</strong> &mdash; Two major processors suspended; prairie supply chain disrupted <span class="badge badge-severity high">High</span></li>
+                <li><strong>Rare Earth Restrictions</strong> &mdash; Gallium &amp; germanium export controls effective Feb 15 <span class="badge badge-severity elevated">Elevated</span></li>
+              </ul>
+            </div>
+
+            <!-- Legislative Tracker -->
+            <div class="sidebar-module">
+              <h3 class="sidebar-module__title">Legislative Tracker</h3>
+              <ul class="sidebar-module__list">
+                <li><strong>Bill C-27</strong> (AIDA) &mdash; Committee stage <span class="badge badge-category technology">Tech</span></li>
+                <li><strong>Motion M-62</strong> &mdash; Uyghur genocide recognition &mdash; Passed</li>
+                <li><strong>Bill S-7</strong> &mdash; Foreign agent registry &mdash; 2nd reading</li>
+              </ul>
+            </div>
+
+            <!-- Daily Email CTA -->
+            <div class="cta-box">
+              <div class="cta-box__title">Get the Daily Briefing</div>
+              <div class="cta-box__body">One email per morning with the latest Canada-China signals.</div>
+              <a href="#" class="cta-box__button">Subscribe</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-section">
+        <h4 class="footer-section__title">China Compass</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/">Today</a></li>
+          <li><a href="/en/signals.html">Signals</a></li>
+          <li><a href="/en/dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">Learn</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/how-china-works.html">How China Works</a></li>
+          <li><a href="/en/business.html">Business &amp; Markets</a></li>
+          <li><a href="/en/entities.html">Entities</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">About</h4>
+        <ul class="footer-section__list">
+          <li><a href="/en/about.html">Methodology</a></li>
+          <li><a href="/en/about.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2025 China Compass. Open-source intelligence for the Canada-China relationship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme-toggle.js"></script>
+  <script src="/js/filters.js"></script>
+</body>
+</html>

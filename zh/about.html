@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国罗盘 — 关于与方法论</title>
+  <script>(function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.setAttribute('data-theme','dark');})();</script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="alternate" hreflang="en" href="/en/about.html">
+  <link rel="alternate" hreflang="zh" href="/zh/about.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/zh/" class="site-logo"><span class="site-logo__mark">&#x25C9;</span> 中国罗盘</a>
+    <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+    <label for="hamburger" class="hamburger-label" aria-label="菜单"><span></span></label>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="/zh/" class="main-nav__link">今日</a>
+      <a href="/zh/signals.html" class="main-nav__link">信号</a>
+      <a href="/zh/how-china-works.html" class="main-nav__link">读懂中国</a>
+      <a href="/zh/business.html" class="main-nav__link">商业与市场</a>
+      <a href="/zh/dashboard.html" class="main-nav__link">数据面板</a>
+      <a href="/zh/entities.html" class="main-nav__link">实体目录</a>
+      <a href="/zh/about.html" class="main-nav__link" aria-current="page">关于</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/en/about.html" class="lang-toggle" title="Switch to English">EN</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换深色模式">
+        <span class="icon-sun">&#9788;</span><span class="icon-moon">&#9790;</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="main-content">
+
+  <section class="hero-strip">
+    <div class="container">
+      <h1 class="hero-strip__title">关于中国罗盘</h1>
+      <p class="hero-strip__subtitle">加中关系情报简报的方法论、来源和原则</p>
+    </div>
+  </section>
+
+  <div class="container-narrow">
+
+    <section>
+      <h2>使命</h2>
+      <p>中国罗盘每日提供关于加中关系的双语情报简报。我们的目标是让复杂的地缘政治动态对加拿大政策制定者、商业专业人士、记者、研究人员和广大公众来说变得通俗易懂。</p>
+      <p>我们相信，一个在与威权国家处理复杂关系时保持知情的公众，对于健全的民主至关重要。中国罗盘致力于成为一个值得信赖的、无党派的资源，穿透噪音和意识形态，呈现基于事实的、有背景的分析。</p>
+    </section>
+
+    <section>
+      <h2>方法论</h2>
+
+      <h3>信号采集</h3>
+      <p>信号每日从精选的公开来源中采集，包括：</p>
+      <ul>
+        <li>加拿大政府声明和新闻稿（加拿大全球事务部、总理办公室、议会记录）</li>
+        <li>中国政府来源（新华社、国务院、商务部、外交部发言人记录）</li>
+        <li>通讯社（路透社、美联社、法新社）</li>
+        <li>专业中国分析（Sinocism、China Brief、MERICS）</li>
+        <li>加拿大议会辩论记录和委员会会议记录</li>
+        <li>贸易数据（加拿大统计局、中国海关）</li>
+      </ul>
+
+      <h3>严重性评级</h3>
+      <p>每个信号被赋予五级严重性评级：</p>
+      <ul>
+        <li><strong>危急</strong>：需要紧急关注的即时高影响事件（例如，加拿大公民被拘留、军事对峙）</li>
+        <li><strong>高</strong>：对双边关系有直接影响的重大发展（例如，贸易禁令、召见大使）</li>
+        <li><strong>升高</strong>：有升级可能的值得关注的发展（例如，关税延长、监管变化）</li>
+        <li><strong>中等</strong>：具有间接影响的值得监测的发展（例如，国内政策变化、立法更新）</li>
+        <li><strong>低</strong>：提供背景和认知的发展（例如，社会趋势、学术报告）</li>
+      </ul>
+
+      <h3>紧张指数</h3>
+      <p>加中紧张指数是一个由六个组成部分计算的综合评分（0-10）：</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>组成部分</th>
+            <th>权重</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>外交</td>
+            <td>25%</td>
+            <td>使馆行动、声明、召见事件</td>
+          </tr>
+          <tr>
+            <td>贸易</td>
+            <td>25%</td>
+            <td>关税、禁令、贸易量变化、争端</td>
+          </tr>
+          <tr>
+            <td>军事</td>
+            <td>15%</td>
+            <td>解放军活动、北美防空司令部事件、国防态势</td>
+          </tr>
+          <tr>
+            <td>政治</td>
+            <td>15%</td>
+            <td>立法行动、党代会结果、外国干预</td>
+          </tr>
+          <tr>
+            <td>科技</td>
+            <td>10%</td>
+            <td>科技禁令、知识产权争端、研究限制</td>
+          </tr>
+          <tr>
+            <td>社会</td>
+            <td>10%</td>
+            <td>侨民问题、留学生关切、公众情绪</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>每个组成部分根据30天滚动窗口内信号的严重性和频率评分0-10。综合评分为加权平均值。</p>
+
+      <h3>分类系统</h3>
+      <p>信号被分为八个领域：</p>
+      <ul>
+        <li><strong>外交</strong>：双边关系、使馆行动、领事事务和外交信号</li>
+        <li><strong>贸易</strong>：进出口流量、关税、制裁、贸易协定和商业争端</li>
+        <li><strong>军事</strong>：国防活动、海军行动、领空事件和安全合作</li>
+        <li><strong>科技</strong>：科技政策、研究合作、知识产权争端和数字基础设施</li>
+        <li><strong>政治</strong>：立法行动、选举、政党政治和外国干预</li>
+        <li><strong>经济</strong>：宏观经济趋势、投资流向、金融市场和财政政策</li>
+        <li><strong>社会</strong>：侨民社区、教育、文化交流和公众舆论</li>
+        <li><strong>法律</strong>：引渡、法治、司法程序和监管执法</li>
+      </ul>
+
+      <h3>双语方针</h3>
+      <p>内容以英文和中文两种语言制作，服务于加拿大的双语中国观察社区。中文来源以原文进行分析。实体名称同时包含英文和中文。术语表系统提供关键术语的行内翻译。</p>
+    </section>
+
+    <section>
+      <h2>编辑原则</h2>
+      <ol>
+        <li><strong>事实准确</strong>：所有主张均有来源且可验证。我们区分已确认事实、官方声明和分析。</li>
+        <li><strong>无党派立场</strong>：我们不就加中关系倡导任何政治立场。我们提供信息；读者自行判断。</li>
+        <li><strong>透明</strong>：我们的方法论是公开的。我们的来源已标注。我们的局限性已说明。</li>
+        <li><strong>易于理解</strong>：复杂的地缘政治应该让非专业人士也能理解。我们避免使用专业术语并解释背景。</li>
+        <li><strong>双语平等</strong>：两个语言版本获得同等的编辑关注。两者都不是对方的简单翻译。</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>局限性</h2>
+      <p>我们承认以下局限性：</p>
+      <ul>
+        <li>中国罗盘依赖开源情报。我们无法获取机密信息。</li>
+        <li>中国政府的透明度有限。部分评估涉及基于信息的推断。</li>
+        <li>紧张指数是一个简化模型。现实比任何单一数字都更加复杂。</li>
+        <li>市场数据存在延迟且仅供参考。不应将其作为投资决策的依据。</li>
+        <li>我们是一个小团队。报道空白不可避免。</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p>如有问题、更正或媒体咨询：<a href="mailto:contact@chinacompass.ca">contact@chinacompass.ca</a></p>
+      <p>如有技术问题或希望贡献：<a href="#">GitHub 代码仓库</a></p>
+      <p>我们欢迎来自各领域专家、中国问题学者和加中关系从业者的反馈。</p>
+    </section>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="footer-section"><h4 class="footer-section__title">中国罗盘</h4><ul class="footer-section__list"><li><a href="/zh/">今日</a></li><li><a href="/zh/signals.html">信号</a></li><li><a href="/zh/dashboard.html">数据面板</a></li></ul></div>
+    <div class="footer-section"><h4 class="footer-section__title">了解</h4><ul class="footer-section__list"><li><a href="/zh/how-china-works.html">读懂中国</a></li><li><a href="/zh/business.html">商业与市场</a></li><li><a href="/zh/entities.html">实体目录</a></li></ul></div>
+    <div class="footer-section"><h4 class="footer-section__title">关于</h4><ul class="footer-section__list"><li><a href="/zh/about.html">方法论</a></li><li><a href="/zh/about.html#contact">联系我们</a></li></ul></div>
+    <div class="site-footer__bottom"><p>&copy; 2025 中国罗盘。加中关系开源情报。</p></div>
+  </div>
+</footer>
+
+<script src="/js/theme-toggle.js"></script>
+</body>
+</html>

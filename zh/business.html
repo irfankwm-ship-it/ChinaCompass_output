@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中国罗盘 — 商业与市场</title>
+  <meta name="description" content="中国市场数据、行业分析和加中贸易情报。">
+  <link rel="alternate" hreflang="en" href="/en/business.html">
+  <link rel="alternate" hreflang="zh" href="/zh/business.html">
+  <script>
+    (function(){var t;try{t=localStorage.getItem('cc-theme')}catch(e){}
+    if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))
+    document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
+  <link rel="stylesheet" href="/css/design-system.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/layout.css">
+</head>
+<body>
+
+  <!-- ===== 头部导航 ===== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="/zh/" class="site-logo">
+        <span class="site-logo__mark">&#x25C9;</span> 中国罗盘
+      </a>
+
+      <input type="checkbox" id="hamburger" class="hamburger-toggle sr-only">
+      <label for="hamburger" class="hamburger-label" aria-label="菜单">
+        <span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/zh/" class="main-nav__link">今日</a>
+        <a href="/zh/signals.html" class="main-nav__link">信号</a>
+        <a href="/zh/how-china-works.html" class="main-nav__link">读懂中国</a>
+        <a href="/zh/business.html" class="main-nav__link" aria-current="page">商业与市场</a>
+        <a href="/zh/dashboard.html" class="main-nav__link">数据面板</a>
+        <a href="/zh/entities.html" class="main-nav__link">实体目录</a>
+        <a href="/zh/about.html" class="main-nav__link">关于</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="/en/business.html" class="lang-toggle" title="Switch to English">EN</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换暗色模式">
+          <span class="icon-sun">&#9788;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ===== 头条横幅 ===== -->
+    <section class="hero-strip">
+      <div class="container">
+        <h1 class="hero-strip__title">商业与市场</h1>
+        <p class="hero-strip__subtitle">中国市场数据、行业分析和加中贸易情报</p>
+      </div>
+    </section>
+
+    <!-- ===== 市场指数 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-4">
+          <!-- 上证综指 -->
+          <div class="market-card">
+            <div class="market-card__name">上证综指 (SSE)</div>
+            <div class="market-card__value">3,128.55</div>
+            <div class="market-card__change up">+1.2%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,28 15,26 30,24 45,22 55,25 65,20 80,16 100,8"/>
+            </svg>
+          </div>
+          <!-- 深证成指 -->
+          <div class="market-card">
+            <div class="market-card__name">深证成指 (SZSE)</div>
+            <div class="market-card__value">10,245.80</div>
+            <div class="market-card__change down">-0.4%</div>
+            <svg class="market-card__sparkline down" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,12 15,10 30,14 45,16 55,13 65,18 80,20 100,22"/>
+            </svg>
+          </div>
+          <!-- 恒生指数 -->
+          <div class="market-card">
+            <div class="market-card__name">恒生指数 (HSI)</div>
+            <div class="market-card__value">16,589.33</div>
+            <div class="market-card__change up">+0.8%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,26 15,24 30,22 45,18 55,20 65,16 80,12 100,10"/>
+            </svg>
+          </div>
+          <!-- 沪深300 -->
+          <div class="market-card">
+            <div class="market-card__name">沪深300</div>
+            <div class="market-card__value">3,742.10</div>
+            <div class="market-card__change up">+0.6%</div>
+            <svg class="market-card__sparkline up" viewBox="0 0 100 32" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="0,22 15,20 30,21 45,19 55,18 65,17 80,16 100,14"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 市场信号 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">市场信号</h2>
+        </div>
+
+        <!-- 信号 1 -->
+        <div class="signal-card" data-severity="elevated" data-category="trade">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">中国延长对加拿大木材的反倾销关税</h3>
+            <span class="badge badge-severity elevated">升高</span>
+            <span class="badge badge-category trade">贸易</span>
+          </div>
+          <div class="signal-card__body">
+            商务部宣布将加拿大软木木材进口反倾销税延长五年，对主要生产商维持8.5&ndash;22.1%的关税。
+          </div>
+          <div class="signal-card__meta">
+            <span>来源：商务部公告 #12-2025</span>
+            <span>&middot;</span>
+            <span>2025年1月29日</span>
+          </div>
+        </div>
+
+        <!-- 信号 2 -->
+        <div class="signal-card" data-severity="elevated" data-category="technology">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">中国以国家安全为由限制稀土出口</h3>
+            <span class="badge badge-severity elevated">升高</span>
+            <span class="badge badge-category technology">科技</span>
+          </div>
+          <div class="signal-card__body">
+            对镓、锗及其他关键矿产的新出口管制即刻生效，理由为国家安全考量。行业分析师预计半导体和国防领域供应链将受到冲击。
+          </div>
+          <div class="signal-card__meta">
+            <span>来源：商务部</span>
+            <span>&middot;</span>
+            <span>2025年1月28日</span>
+          </div>
+        </div>
+
+        <!-- 信号 3 -->
+        <div class="signal-card" data-severity="moderate" data-category="economic">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">央行下调存款准备金率50个基点</h3>
+            <span class="badge badge-severity moderate">中等</span>
+            <span class="badge badge-category economic">经济</span>
+          </div>
+          <div class="signal-card__body">
+            中国人民银行下调存款准备金率50个基点，释放约1.2万亿元人民币流动性。此举表明在国内需求放缓背景下，政府持续推动经济增长的刺激措施。
+          </div>
+          <div class="signal-card__meta">
+            <span>来源：中国人民银行</span>
+            <span>&middot;</span>
+            <span>2025年1月27日</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 行业概览 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">行业概览</h2>
+        </div>
+        <div class="grid grid-3">
+          <!-- 科技 -->
+          <div class="card">
+            <h4 class="card__title">科技</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证科技指数</div>
+              <div class="stat-card__value">4,521.30</div>
+              <div class="market-card__change up">+2.1%</div>
+            </div>
+          </div>
+          <!-- 房地产 -->
+          <div class="card">
+            <h4 class="card__title">房地产</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证房地产指数</div>
+              <div class="stat-card__value">1,823.45</div>
+              <div class="market-card__change down">-3.2%</div>
+            </div>
+          </div>
+          <!-- 能源 -->
+          <div class="card">
+            <h4 class="card__title">能源</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证能源指数</div>
+              <div class="stat-card__value">2,156.80</div>
+              <div class="market-card__change up">+0.4%</div>
+            </div>
+          </div>
+          <!-- 金融 -->
+          <div class="card">
+            <h4 class="card__title">金融</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证金融指数</div>
+              <div class="stat-card__value">5,892.10</div>
+              <div class="market-card__change down">-0.1%</div>
+            </div>
+          </div>
+          <!-- 消费 -->
+          <div class="card">
+            <h4 class="card__title">消费</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证消费指数</div>
+              <div class="stat-card__value">3,445.60</div>
+              <div class="market-card__change up">+1.5%</div>
+            </div>
+          </div>
+          <!-- 医疗 -->
+          <div class="card">
+            <h4 class="card__title">医疗</h4>
+            <div class="card__body">
+              <div class="text-sm text-muted">中证医疗指数</div>
+              <div class="stat-card__value">2,987.25</div>
+              <div class="market-card__change up">+0.8%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 涨跌排行 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">涨跌排行</h2>
+        </div>
+        <div class="grid grid-2">
+          <!-- 涨幅榜 -->
+          <div class="card">
+            <h4 class="card__title">涨幅榜</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>名称</th>
+                  <th>价格（人民币）</th>
+                  <th>涨跌幅</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>宁德时代 (300750)</td>
+                  <td>245.80</td>
+                  <td class="up">+5.2%</td>
+                </tr>
+                <tr>
+                  <td>比亚迪 (002594)</td>
+                  <td>312.40</td>
+                  <td class="up">+4.1%</td>
+                </tr>
+                <tr>
+                  <td>贵州茅台 (600519)</td>
+                  <td>1,745.00</td>
+                  <td class="up">+3.8%</td>
+                </tr>
+                <tr>
+                  <td>隆基绿能 (601012)</td>
+                  <td>28.90</td>
+                  <td class="up">+3.5%</td>
+                </tr>
+                <tr>
+                  <td>迈瑞医疗 (300760)</td>
+                  <td>312.50</td>
+                  <td class="up">+2.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 跌幅榜 -->
+          <div class="card">
+            <h4 class="card__title">跌幅榜</h4>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>名称</th>
+                  <th>价格（人民币）</th>
+                  <th>涨跌幅</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>碧桂园 (2007.HK)</td>
+                  <td>0.82</td>
+                  <td class="down">-8.3%</td>
+                </tr>
+                <tr>
+                  <td>恒大集团 (3333.HK)</td>
+                  <td>0.15</td>
+                  <td class="down">-6.7%</td>
+                </tr>
+                <tr>
+                  <td>阿里巴巴 (9988.HK)</td>
+                  <td>78.50</td>
+                  <td class="down">-2.8%</td>
+                </tr>
+                <tr>
+                  <td>京东 (9618.HK)</td>
+                  <td>112.30</td>
+                  <td class="down">-2.1%</td>
+                </tr>
+                <tr>
+                  <td>拼多多 (PDD)</td>
+                  <td>98.60</td>
+                  <td class="down">-1.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IPO观察 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">IPO观察</h2>
+        </div>
+        <div class="card">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>公司</th>
+                <th>交易所</th>
+                <th>行业</th>
+                <th>预计日期</th>
+                <th>规模（估计）</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>中芯半导体</td>
+                <td>上交所科创板</td>
+                <td>科技</td>
+                <td>2025年2月15日</td>
+                <td>28亿元</td>
+                <td><span class="badge badge-severity moderate">已批准</span></td>
+              </tr>
+              <tr>
+                <td>绿动力电车</td>
+                <td>深交所创业板</td>
+                <td>汽车</td>
+                <td>2025年2月28日</td>
+                <td>15亿元</td>
+                <td><span class="badge badge-category trade">申报中</span></td>
+              </tr>
+              <tr>
+                <td>云智AI</td>
+                <td>港交所</td>
+                <td>科技</td>
+                <td>2025年3月</td>
+                <td>42亿港元</td>
+                <td><span class="badge badge-category political">待审</span></td>
+              </tr>
+              <tr>
+                <td>博创生物制药</td>
+                <td>上交所</td>
+                <td>医疗</td>
+                <td>2025年第一季度</td>
+                <td>31亿元</td>
+                <td><span class="badge badge-severity moderate">已批准</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 监管动态 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">监管动态</h2>
+        </div>
+
+        <!-- 监管信号 1 -->
+        <div class="signal-card" data-severity="elevated" data-category="legal">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">市场监管总局启动云计算行业反垄断审查</h3>
+            <span class="badge badge-severity elevated">升高</span>
+            <span class="badge badge-category legal">法律</span>
+          </div>
+          <div class="signal-card__body">
+            国家市场监督管理总局已对阿里云、腾讯云和华为云的市场行为发起反垄断调查。审查重点涉及定价策略、数据可移植性和市场支配地位。
+          </div>
+          <div class="signal-card__meta">
+            <span>来源：市场监管总局</span>
+            <span>&middot;</span>
+            <span>2025年1月26日</span>
+          </div>
+        </div>
+
+        <!-- 监管信号 2 -->
+        <div class="signal-card" data-severity="moderate" data-category="technology">
+          <div class="signal-card__header">
+            <h3 class="signal-card__title">网信办发布AI生成内容新规</h3>
+            <span class="badge badge-severity moderate">中等</span>
+            <span class="badge badge-category technology">科技</span>
+          </div>
+          <div class="signal-card__body">
+            国家互联网信息办公室发布新规，要求所有在华运营的生成式AI服务进行登记注册。规则要求内容标注、算法透明度和用户实名认证，将于2025年3月生效。
+          </div>
+          <div class="signal-card__meta">
+            <span>来源：网信办</span>
+            <span>&middot;</span>
+            <span>2025年1月25日</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 加中贸易面板 ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-header__title">加中贸易</h2>
+        </div>
+
+        <!-- 贸易统计 -->
+        <div class="grid grid-3">
+          <div class="stat-card">
+            <div class="stat-card__label">贸易总额（2024年）</div>
+            <div class="stat-card__value">894亿美元</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">贸易逆差</div>
+            <div class="stat-card__value">521亿美元</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__label">同比变化</div>
+            <div class="stat-card__value down">-2.3%</div>
+          </div>
+        </div>
+
+        <!-- 商品贸易表 -->
+        <div class="card" style="margin-top:var(--space-4);">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>商品</th>
+                <th>出口额（加元）</th>
+                <th>进口额（加元）</th>
+                <th>余额</th>
+                <th>趋势</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>能源产品</td>
+                <td>82亿</td>
+                <td>3亿</td>
+                <td class="up">+79亿</td>
+                <td>稳定</td>
+              </tr>
+              <tr>
+                <td>油菜籽/油料种子</td>
+                <td>21亿</td>
+                <td>0</td>
+                <td class="up">+21亿</td>
+                <td class="disruption-text">受阻</td>
+              </tr>
+              <tr>
+                <td>林业产品</td>
+                <td>18亿</td>
+                <td>1亿</td>
+                <td class="up">+17亿</td>
+                <td>下降</td>
+              </tr>
+              <tr>
+                <td>机械设备</td>
+                <td>9亿</td>
+                <td>184亿</td>
+                <td class="down">-175亿</td>
+                <td>增长</td>
+              </tr>
+              <tr>
+                <td>电子产品</td>
+                <td>4亿</td>
+                <td>142亿</td>
+                <td class="down">-138亿</td>
+                <td>稳定</td>
+              </tr>
+              <tr>
+                <td>矿产与金属</td>
+                <td>34亿</td>
+                <td>21亿</td>
+                <td class="up">+13亿</td>
+                <td>波动</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 中断预警 -->
+        <div class="disruption-banner" style="margin-top:var(--space-4);">
+          <div class="disruption-banner__icon">&#9888;</div>
+          <div class="disruption-banner__content">
+            <div class="disruption-banner__title">活跃中断：油菜籽出口限制</div>
+            <div class="disruption-banner__body">中国已暂停从两家主要加拿大加工商进口油菜籽。双边谈判正在进行中，但尚未宣布解决时间表。建议加拿大油菜籽出口商关注商务部和加拿大食品检验局通知。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 页脚 ===== -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-section">
+        <h4 class="footer-section__title">中国罗盘</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/">今日</a></li>
+          <li><a href="/zh/signals.html">信号</a></li>
+          <li><a href="/zh/dashboard.html">数据面板</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">了解</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/how-china-works.html">读懂中国</a></li>
+          <li><a href="/zh/business.html">商业与市场</a></li>
+          <li><a href="/zh/entities.html">实体目录</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 class="footer-section__title">关于</h4>
+        <ul class="footer-section__list">
+          <li><a href="/zh/about.html">方法论</a></li>
+          <li><a href="/zh/about.html#contact">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; 2025 中国罗盘。加中关系开源情报。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme-toggle.js"></script>
+</body>
+</html>
