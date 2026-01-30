@@ -878,7 +878,7 @@ footer {
   <div class="container header-inner">
     <div>
       <div class="site-title">CHINA COMPASS</div>
-      <div class="site-subtitle">Open-source Canada-China monitor &middot; Fully automated &middot; No editorial &middot; No AI generation</div>
+      <div class="site-subtitle">Automated Canada-China intelligence monitor</div>
     </div>
     <div class="header-meta">
       Last pipeline run: 2026-01-30 06:00 ET<br>
@@ -978,7 +978,7 @@ footer {
     <span>Nov</span>
     <span>Jan 2026</span>
   </div>
-  <div class="method-note">Fully quantitative composite. No editorial input. <a href="#methodology">See methodology</a></div>
+  <div class="method-note">Proprietary composite index. <a href="#methodology">See methodology</a></div>
 </div>
 
 <!-- ===== MAIN GRID: SIGNAL FEED + SIDEBAR ===== -->
@@ -1104,7 +1104,7 @@ footer {
     <div class="signal-title">MFA spokesperson addresses "Western interference in Asia-Pacific regional affairs"</div>
 
     <div class="mt-warning">
-      &#9888; Machine translated (NLLB-200 600M) &mdash; may contain errors &mdash;
+      &#9888; Machine translated (auto) &mdash; may contain errors &mdash;
       <button class="original-toggle" onclick="document.getElementById('orig1').style.display = document.getElementById('orig1').style.display === 'none' ? 'block' : 'none'">Show original</button>
     </div>
     <div class="original-text" id="orig1" style="display:none">
@@ -1124,7 +1124,7 @@ footer {
       </ul>
     </div>
     <div class="signal-footer">
-      <span class="signal-source">Source: <a href="#">PRC Ministry of Foreign Affairs</a> &middot; Tier 1 (Official Record) &middot; Translated by NLLB-200</span>
+      <span class="signal-source">Source: <a href="#">PRC Ministry of Foreign Affairs</a> &middot; Tier 1 (Official Record) &middot; Machine translated</span>
       <div class="signal-links">
         <a href="#">MFA profile</a>
         <a href="#">Chinese signals archive</a>
@@ -1175,7 +1175,7 @@ footer {
     <div class="signal-title">Global Times editorial: "Canada should not be a pawn in US Indo-Pacific strategy"</div>
 
     <div class="mt-warning">
-      &#9888; Machine translated (NLLB-200 600M) &mdash; may contain errors &mdash;
+      &#9888; Machine translated (auto) &mdash; may contain errors &mdash;
       <button class="original-toggle" onclick="document.getElementById('orig2').style.display = document.getElementById('orig2').style.display === 'none' ? 'block' : 'none'">Show original</button>
     </div>
     <div class="original-text" id="orig2" style="display:none">
@@ -1195,7 +1195,7 @@ footer {
       </ul>
     </div>
     <div class="signal-footer">
-      <span class="signal-source">Source: <a href="#">Global Times (环球时报)</a> &middot; Tier 2 (State Media Editorial) &middot; Translated by NLLB-200</span>
+      <span class="signal-source">Source: <a href="#">Global Times (环球时报)</a> &middot; Tier 2 (State Media Editorial) &middot; Machine translated</span>
       <div class="signal-links">
         <a href="#">Global Times profile</a>
         <a href="#">Chinese signals archive</a>
@@ -1292,7 +1292,7 @@ footer {
       No other active disruptions.<br>
       Last resolved: Lobster inspection delay (Jan 12, 8 days)
     </div>
-    <div class="method-note">Rule-based detection: 3+ signals, same commodity, 7-day window, 2+ source types. <a href="#methodology">Details</a></div>
+    <div class="method-note">Automated pattern detection. <a href="#methodology">Details</a></div>
   </div>
 
   <!-- BILL TRACKER -->
@@ -1399,7 +1399,7 @@ footer {
       <div class="hansard-bar-wrap"><div class="hansard-bar" style="width:12%"></div></div>
       <span class="hansard-count">2</span>
     </div>
-    <div class="method-note">Source: OpenParl API. Keyword match on China-related terms. Incidental mentions excluded by co-occurrence filter.</div>
+    <div class="method-note">Source: OpenParl API. Substantive mentions only.</div>
   </div>
 
 </div>
@@ -1545,7 +1545,7 @@ footer {
         </tr>
       </tbody>
     </table>
-    <div class="method-note">Source: OpenAlex API (co-authored papers, trailing 12 months). Military-linked: cross-referenced against ASPI China Defence Universities Tracker. Co-authorship does not imply impropriety. Last refreshed: 2026-01-01.</div>
+    <div class="method-note">Academic co-authorship data, trailing 12 months. Military-linked institutions flagged. Co-authorship does not imply impropriety. Last refreshed: 2026-01-01.</div>
   </div>
 </div>
 
@@ -1661,23 +1661,21 @@ footer {
 <div class="dash-card" style="max-width:800px;">
   <div class="dash-card-title">How This Site Works</div>
   <div style="font-size:13px; color:var(--text-muted); line-height:1.8;">
-    <p style="margin-bottom:12px;">This site is <strong>fully automated</strong>. No human editors select, write, or review content before publication. No AI language models generate text. All content is either extracted from primary sources or computed by deterministic rules.</p>
+    <p style="margin-bottom:12px;">China Compass is an <strong>automated monitoring platform</strong> that tracks Canada-China relations across trade, security, policy, and diplomatic dimensions. Content is generated through proprietary data pipelines — not written by human editors or AI language models.</p>
 
-    <p style="margin-bottom:12px;"><strong>Data sources:</strong> Statistics Canada API, OpenParl (Hansard), LEGISinfo, Canada Gazette, CSE/CSIS/RCMP published releases, PRC Ministry of Foreign Affairs, Xinhua, People's Daily, Global Times, MOFCOM, General Administration of Customs, OpenAlex (academic partnerships), ASPI China Defence Universities Tracker, CFIA import database.</p>
+    <p style="margin-bottom:12px;"><strong>Data sources:</strong> We monitor Canadian and Chinese government publications, parliamentary records, official trade statistics, academic research databases, and published security advisories. All signals link to their primary source.</p>
 
-    <p style="margin-bottom:12px;"><strong>Translation:</strong> Chinese-language sources are translated using NLLB-200 (600M distilled), an open-source machine translation model by Meta AI running locally on this server. Translation quality is functional but imperfect. The original Chinese text is always available. No proprietary translation service is used.</p>
+    <p style="margin-bottom:12px;"><strong>Translation:</strong> Chinese-language sources are machine translated. The original Chinese text is always available alongside the English translation. Translations may contain errors — we flag this on every translated item.</p>
 
-    <p style="margin-bottom:12px;"><strong>Signal scoring:</strong> Every signal is scored 0-100 on four axes: Relevance (keyword match + entity match, 0-30), Magnitude (statistical deviation or event severity, 0-30), Novelty (deduplication against recent signals, 0-20), Source Weight (source credibility tier, 0-20). Thresholds: Significant &ge;70, Notable &ge;45, Routine &ge;25, Noise &lt;25. All keywords, weights, and thresholds are published in the source repository.</p>
+    <p style="margin-bottom:12px;"><strong>Signal scoring:</strong> Every signal receives a composite score (0-100) based on a proprietary scoring model that weighs relevance, magnitude, novelty, and source credibility. Signals are classified as Significant, Notable, or Routine based on their score.</p>
 
-    <p style="margin-bottom:12px;"><strong>Escalation detection:</strong> Chinese diplomatic language is classified using keyword matching against a curated list of ~50 formulaic diplomatic phrases, tiered as elevated / firm / moderate / neutral. This is crude compared to expert analysis and misses context-dependent meaning. The keyword list is published.</p>
+    <p style="margin-bottom:12px;"><strong>Escalation detection:</strong> Chinese diplomatic language is analyzed for escalation signals using a proprietary classification system. Escalation levels (Elevated, Firm, Moderate, Neutral) reflect the intensity of diplomatic language detected in official Chinese statements.</p>
 
-    <p style="margin-bottom:12px;"><strong>Tension Index:</strong> Fully quantitative composite of 6 sub-indices (Trade Friction, Trade Volume, Diplomatic Frequency, Escalation Language, Parliamentary Intensity, Security Events). No editorial or AI input. Methodology and weights are published. Historical values are not retroactively adjusted.</p>
+    <p style="margin-bottom:12px;"><strong>Tension Index:</strong> A proprietary composite index measuring friction in the Canada-China relationship across six dimensions. The index is fully quantitative — no editorial or subjective input. Historical values are not retroactively adjusted.</p>
 
-    <p style="margin-bottom:12px;"><strong>Limitations:</strong> This site cannot conduct original reporting, file access-to-information requests, verify through human source networks, detect subtle diplomatic signals, or provide nuanced analysis of community impact. Machine translation may contain errors. Escalation detection is keyword-based and misses ~20-30% of what an expert would catch. Disruption detection has a higher false-positive rate than human assessment.</p>
+    <p style="margin-bottom:12px;"><strong>Limitations:</strong> This platform monitors publicly available sources. It does not conduct original investigative reporting or make predictions. Machine translation may contain errors. Automated analysis cannot fully replicate expert human judgment on diplomatic nuance.</p>
 
-    <p style="margin-bottom:12px;"><strong>Operator:</strong> One person reviews system health weekly and performs quality audits monthly. The operator maintains keyword lists, active situations, and supply chain alt-source ratings. The operator does not write or edit signal content. Contact: operator@chinacompass.ca</p>
-
-    <p><strong>Infrastructure:</strong> Hostinger KVM2 VPS (2 vCPU, 8 GB RAM, 100 GB NVMe). Ubuntu Linux, Python pipelines, SQLite, Hugo static site generator, NGINX. Total operating cost: &lt;$20/month. Source code: published.</p>
+    <p><strong>Contact:</strong> operator@chinacompass.ca</p>
   </div>
 </div>
 
@@ -1687,15 +1685,12 @@ footer {
 <footer>
   <div class="container footer-content">
     <div class="footer-transparency">
-      <strong>China Compass</strong> is an automated open-source intelligence monitor.
-      It aggregates, structures, translates, and scores publicly available information about
-      Canada-China relations. It does not generate text, conduct original reporting, or apply
-      editorial judgment. Every data point links to its primary source. Every score is
-      decomposable. The full methodology and source code are published.
+      <strong>China Compass</strong> is an automated intelligence monitor tracking
+      Canada-China relations across trade, security, policy, and diplomatic dimensions.
+      Every data point links to its primary source.
     </div>
     <div style="text-align:right;">
       <a href="#methodology">Methodology</a><br>
-      <a href="#">Source Code</a><br>
       <a href="#">RSS Feed</a><br>
       <a href="#">JSON API</a><br>
       <br>
