@@ -6,11 +6,11 @@
   try { stored = localStorage.getItem(KEY); } catch (e) { /* ok */ }
 
   if (stored === 'zh' || stored === 'en') {
-    window.location.replace('/' + stored + '/');
+    window.location.replace(stored + '/');
     return;
   }
 
   var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
   var target = (lang.indexOf('zh') === 0) ? 'zh' : 'en';
-  window.location.replace('/' + target + '/');
+  window.location.replace(target + '/');
 })();
