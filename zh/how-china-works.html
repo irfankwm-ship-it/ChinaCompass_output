@@ -53,320 +53,636 @@
       <div class="grid grid-sidebar-left">
 
     <!-- Table of Contents -->
-    <aside class="toc">
-      <h2 class="toc-title">目录</h2>
-      <ol>
-        <li><a href="#overview">概述</a></li>
-        <li><a href="#party">中国共产党</a></li>
-        <li><a href="#government">国务院</a></li>
-        <li><a href="#legislature">立法机构</a></li>
-        <li><a href="#party-vs-govt">党与政府</a></li>
-        <li><a href="#provincial">地方治理</a></li>
-        <li><a href="#military">军事</a></li>
-        <li><a href="#key-institutions">关键机构</a></li>
-        <li><a href="#decision-making">决策过程</a></li>
-        <li><a href="#glossary">术语表</a></li>
+    <aside class="toc" aria-label="目录">
+      <h2 class="toc__title">目录</h2>
+      <ol class="toc__list">
+        <li><a href="#overview" class="toc__link">概述</a></li>
+        <li><a href="#party" class="toc__link">中国共产党</a></li>
+        <li><a href="#government" class="toc__link">国务院</a></li>
+        <li><a href="#legislature" class="toc__link">立法机构</a></li>
+        <li><a href="#party-vs-govt" class="toc__link">党与政府</a></li>
+        <li><a href="#provincial" class="toc__link">地方治理</a></li>
+        <li><a href="#military" class="toc__link">军事</a></li>
+        <li><a href="#key-institutions" class="toc__link">关键机构</a></li>
+        <li><a href="#decision-making" class="toc__link">决策过程</a></li>
+        <li><a href="#glossary" class="toc__link">术语表</a></li>
       </ol>
     </aside>
 
     <!-- Long-form Content -->
-    <article class="content-long-form">
+    <article class="long-form">
 
       <!-- 1. Overview -->
       <section id="overview">
-        <h2>中国是如何运作的</h2>
-        <p>中国由单一政党体制治理，中国共产党凌驾于国家机器之上。与西方民主制度不同，中国没有党政分离——党领导一切。理解这种双轨结构，对于观察加中关系至关重要。</p>
-        <p>共产党不仅是执政党，更是整个政治体制的核心。国家机构、军队、司法系统都在党的领导之下运作。</p>
+        <div class="section-heading">
+          <span class="section-number">1</span>
+          <h2>中国是如何运作的</h2>
+        </div>
+
+        <p class="key-takeaway">中国是单一政党国家，中国共产党凌驾于政府、军队和司法机构之上并指挥一切。不存在西方意义上的三权分立。</p>
+
+        <div class="highlight-box">
+          <p class="highlight-box__label">核心概念</p>
+          <p class="highlight-box__text">党 > 国家。中共领导政府、军队和司法的一切。总书记领导党，党领导国家。</p>
+        </div>
+
+        <p>这与加拿大及其他西方民主制度根本不同。在加拿大，总理受议会、法院和独立媒体的制约。在中国，政府部委、省级领导和军事指挥官最终都向党的架构负责，而非通过选举向公众负责。</p>
+
+        <p>理解这种双轨结构——党凌驾于国家之上并渗透到国家之中——是解读中国外交信号、贸易决策、军事姿态以及中国国企在加拿大行动的最重要基础。</p>
+
         <div class="callout">
-          <p class="callout-title">对加拿大为何重要</p>
-          <p>加拿大与中国的外交、贸易和安全互动都受这种党国体制的影响。了解谁真正做出决策，有助于正确解读各种信号。</p>
+          <h3 class="callout__title">对加拿大为何重要</h3>
+          <div class="callout__body">
+            <p>加拿大与中国的外交、贸易和安全互动在各个层面都受这种党国体制的影响。当加拿大官员与中国对口方谈判时，他们面对的是在向党而非向选民负责的指挥链中运作的人。</p>
+          </div>
         </div>
       </section>
 
       <!-- 2. CCP -->
       <section id="party">
-        <h2>中国共产党（CCP）</h2>
-        <p>中国共产党的权力以金字塔式层级结构组织。从最高层到最底层：</p>
-        <ul>
-          <li><strong>总书记</strong>（习近平）——中国最有权力的职位，比国家主席更重要。</li>
-          <li><strong>中央政治局常务委员会</strong>——7名成员，最高决策机构。</li>
-          <li><strong>中央政治局</strong>——24名成员。</li>
-          <li><strong>中央委员会</strong>——约200名成员。</li>
-          <li><strong>全国代表大会</strong>——约2,300名代表，每五年召开一次。</li>
-        </ul>
-        <p>党代会确定未来五年的路线和人事安排。</p>
+        <div class="section-heading">
+          <span class="section-number">2</span>
+          <h2>中国共产党（CCP）</h2>
+        </div>
 
-        <svg viewBox="0 0 500 320" aria-label="中国共产党权力层级" role="img" style="width:100%;max-width:500px;display:block;margin:2rem auto;">
-          <!-- Pyramid -->
-          <polygon points="250,10 490,300 10,300" class="diagram-bg" stroke-width="2"/>
-          <polygon points="250,10 490,300 10,300" class="diagram-border" fill="none" stroke-width="2"/>
-          <!-- Tier lines -->
-          <line x1="210" y1="68" x2="290" y2="68" class="diagram-border" stroke-width="1.5"/>
-          <line x1="155" y1="126" x2="345" y2="126" class="diagram-border" stroke-width="1.5"/>
-          <line x1="100" y1="184" x2="400" y2="184" class="diagram-border" stroke-width="1.5"/>
-          <line x1="50" y1="242" x2="450" y2="242" class="diagram-border" stroke-width="1.5"/>
-          <!-- Labels -->
-          <text x="250" y="50" text-anchor="middle" fill="currentColor" class="diagram-accent" font-size="13" font-weight="bold">总书记</text>
-          <text x="250" y="103" text-anchor="middle" fill="currentColor" font-size="13">常委会 (7人)</text>
-          <text x="250" y="161" text-anchor="middle" fill="currentColor" font-size="13">政治局 (24人)</text>
-          <text x="250" y="219" text-anchor="middle" fill="currentColor" font-size="13">中央委员会 (~200人)</text>
-          <text x="250" y="280" text-anchor="middle" fill="currentColor" font-size="13">全国代表大会 (~2,300人)</text>
-        </svg>
+        <p class="key-takeaway">中共是中国最强大的机构。权力在金字塔结构中急剧集中——从基层的9800万党员到顶端的一位总书记。</p>
+
+        <div class="key-fact-strip">
+          <div class="key-fact">
+            <span class="key-fact__value">9800万</span>
+            <span class="key-fact__label">党员</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">1921</span>
+            <span class="key-fact__label">成立</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">1949</span>
+            <span class="key-fact__label">执政以来</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">7人</span>
+            <span class="key-fact__label">常委会</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">24人</span>
+            <span class="key-fact__label">政治局</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">~200人</span>
+            <span class="key-fact__label">中央委员会</span>
+          </div>
+        </div>
+
+        <p>金字塔顶端是<strong>总书记</strong>（习近平自2012年起担任）——中国最有权力的人。这个头衔比国家主席更重要，后者在很大程度上是礼仪性的。习近平同时担任国家主席和中央军委主席，将三大权力支柱集于一身。这种集中程度是毛泽东以来未曾见过的。</p>
+
+        <p>党通过<strong>组织部</strong>控制所有重要人事任命，管理约7000万干部的职业生涯。晋升取决于党的忠诚度、派系关系，以及在习近平时代对最高领导人的个人效忠。</p>
+
+        <!-- SVG Diagram: CCP Hierarchy Pyramid -->
+        <figure class="diagram">
+          <svg viewBox="0 0 500 320" role="img" aria-label="中共权力层级金字塔">
+            <rect x="30" y="256" width="440" height="48" rx="4" class="diagram-bg diagram-border"/>
+            <text x="250" y="284" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">全国代表大会 (~2,300人)</text>
+            <rect x="80" y="196" width="340" height="48" rx="4" class="diagram-bg diagram-border"/>
+            <text x="250" y="224" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">中央委员会 (~200人)</text>
+            <rect x="130" y="136" width="240" height="48" rx="4" class="diagram-bg diagram-border"/>
+            <text x="250" y="164" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">政治局 (24人)</text>
+            <rect x="175" y="76" width="150" height="48" rx="4" class="diagram-bg diagram-border"/>
+            <text x="250" y="104" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">常委会 (7人)</text>
+            <rect x="195" y="16" width="110" height="48" rx="4" class="diagram-accent"/>
+            <text x="250" y="44" text-anchor="middle" fill="currentColor" font-size="12" font-weight="700">总书记</text>
+          </svg>
+          <figcaption class="diagram__caption">中共权力层级：权力在顶端急剧集中。总书记拥有最高权威。</figcaption>
+        </figure>
 
         <div class="callout">
-          <p class="callout-title">对加拿大为何重要</p>
-          <p>每次党代会后的常委会组成预示着中国未来五年的政策方向。在中国，人事就是政策。</p>
+          <h3 class="callout__title">对加拿大为何重要</h3>
+          <div class="callout__body">
+            <p>每次党代会后的常委会组成预示着中国未来五年的政策方向。2022年习近平将常委会全部换成自己人，表明他的优先事项——自力更生、国家安全、强硬外交——将加强而非缓和。在中国，人事就是政策。</p>
+          </div>
         </div>
       </section>
 
       <!-- 3. State Council -->
       <section id="government">
-        <h2>国务院（政府）</h2>
-        <p>国务院相当于中国的内阁，由总理领导，执行党的决定。国务院负责执行而非制定方向——方向来自党。</p>
-        <p>关键部委：</p>
-        <ul>
-          <li><strong>国家发改委</strong>——经济规划</li>
-          <li><strong>商务部</strong>——贸易</li>
-          <li><strong>外交部</strong>——外交事务</li>
-          <li><strong>财政部</strong>——财政</li>
-        </ul>
+        <div class="section-heading">
+          <span class="section-number">3</span>
+          <h2>国务院（政府）</h2>
+        </div>
+
+        <p class="key-takeaway">国务院是中国的内阁——通过各部委执行党的决定。它不制定国家方向；方向来自党。</p>
+
+        <div class="key-fact-strip">
+          <div class="key-fact">
+            <span class="key-fact__value">李强</span>
+            <span class="key-fact__label">现任总理</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">26</span>
+            <span class="key-fact__label">部委</span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="institution-table">
+            <thead>
+              <tr>
+                <th>机构</th>
+                <th>英文</th>
+                <th>职能</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>国家发改委</strong></td>
+                <td>NDRC</td>
+                <td>经济规划、产业政策、重大项目审批</td>
+              </tr>
+              <tr>
+                <td><strong>商务部</strong></td>
+                <td>MOFCOM</td>
+                <td>贸易政策、关税、外商投资、贸易争端</td>
+              </tr>
+              <tr>
+                <td><strong>外交部</strong></td>
+                <td>MFA</td>
+                <td>外交接口——传达决定，不制定外交政策</td>
+              </tr>
+              <tr>
+                <td><strong>财政部</strong></td>
+                <td>MOF</td>
+                <td>政府收入、财政政策、主权债务</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>在习近平时代，国务院的自主权已大幅缩减。现任总理的权限远小于朱镕基或温家宝等前任。政策方向来自政治局常委会、习近平主持的领导小组以及中央全会。</p>
+
         <div class="callout">
-          <p class="callout-title">对加拿大为何重要</p>
-          <p>当商务部对加拿大油菜籽征收关税时，它执行的是很可能源自党层面的决定。部委是传话者，而非决策者。</p>
+          <h3 class="callout__title">对加拿大为何重要</h3>
+          <div class="callout__body">
+            <p>当商务部对加拿大油菜籽加征关税或发起反倾销调查时，它执行的是很可能源自党层面的决定。部委是传话者，而非决策者。解决贸易争端需要了解决定是在党的哪个层级做出的。</p>
+          </div>
         </div>
       </section>
 
       <!-- 4. Legislature -->
       <section id="legislature">
-        <h2>立法机构：全国人大与政协</h2>
-        <p><strong>全国人民代表大会（全国人大）</strong>：约3,000名代表，每年三月召开。名义上是最高国家权力机关，但实际上批准党的决定。全国人大常委会在闭会期间处理立法事务。</p>
-        <p><strong>中国人民政治协商会议（政协）</strong>：咨询机构，统一战线功能，包括非共产党成员。</p>
-        <p>关键点：中国的立法机构不像西方议会那样运作——它是认可而非辩论。</p>
+        <div class="section-heading">
+          <span class="section-number">4</span>
+          <h2>立法机构：全国人大与政协</h2>
+        </div>
+
+        <p class="key-takeaway">中国有立法机构，但它是认可而非立法。全国人大批准党已经做出的决定；政协是没有立法权的咨询机构。</p>
+
+        <div class="table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>全国人大 (NPC)</th>
+                <th>全国政协 (CPPCC)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>角色</strong></td>
+                <td>立法机关——批准法律、预算、任命</td>
+                <td>咨询——统一战线工作、政策咨询</td>
+              </tr>
+              <tr>
+                <td><strong>规模</strong></td>
+                <td>~3,000名代表</td>
+                <td>~2,200名委员</td>
+              </tr>
+              <tr>
+                <td><strong>会期</strong></td>
+                <td>每年三月（约两周）</td>
+                <td>每年三月（与人大同期）</td>
+              </tr>
+              <tr>
+                <td><strong>实际权力</strong></td>
+                <td>有限——从未否决过重大立法</td>
+                <td>无——没有立法权</td>
+              </tr>
+              <tr>
+                <td><strong>常设机构</strong></td>
+                <td>人大常委会 (~175人)——闭会期间通过法律</td>
+                <td>政协常委会</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>人大常委会是重要立法的载体，包括香港国安法和中国间谍法及数据安全法的修订——这些都直接影响在中国运营或与中国打交道的加拿大人。</p>
+
+        <p>政协的主要功能是<strong>统一战线</strong>工作——将非中共精英纳入体制，向党传达建议。部分政协委员承担着连接大陆与海外华人社区的角色，这与加拿大外国干预辩论直接相关。</p>
       </section>
 
       <!-- 5. Party vs Government -->
       <section id="party-vs-govt">
-        <h2>党与政府：为何重要</h2>
-        <p>中国实行双轨结构：每个政府机构都有党委。党委书记级别高于行政首长。例如：在省级，省委书记的级别高于省长。</p>
+        <div class="section-heading">
+          <span class="section-number">5</span>
+          <h2>党与政府</h2>
+        </div>
 
-        <svg viewBox="0 0 600 280" aria-label="党国二元结构" role="img" style="width:100%;max-width:600px;display:block;margin:2rem auto;">
-          <!-- Left column: Party -->
-          <rect x="20" y="10" width="200" height="40" rx="6" class="diagram-bg diagram-border" stroke-width="2"/>
-          <text x="120" y="36" text-anchor="middle" fill="currentColor" font-size="15" font-weight="bold">党</text>
+        <p class="key-takeaway">每个层级的政府都有对应的党组织凌驾其上并加以控制。党委书记在每个层级都高于行政首长。</p>
 
-          <rect x="40" y="70" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="120" y="93" text-anchor="middle" fill="currentColor" class="diagram-accent" font-size="13">总书记</text>
+        <div class="highlight-box">
+          <p class="highlight-box__label">核心规则</p>
+          <p class="highlight-box__text">党委书记在每个层级都高于行政首长。省级：省委书记 > 省长。市级：市委书记 > 市长。部委：部党组 > 部长。</p>
+        </div>
 
-          <rect x="40" y="116" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="120" y="139" text-anchor="middle" fill="currentColor" font-size="13">常委会</text>
+        <!-- SVG Diagram: Party-State Duality Chart -->
+        <figure class="diagram">
+          <svg viewBox="0 0 600 280" role="img" aria-label="党国二元结构图">
+            <rect x="20" y="10" width="230" height="36" rx="4" class="diagram-accent"/>
+            <text x="135" y="33" text-anchor="middle" fill="currentColor" font-size="14" font-weight="700">党</text>
+            <rect x="350" y="10" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="465" y="33" text-anchor="middle" fill="currentColor" font-size="14" font-weight="700">国家</text>
+            <rect x="20" y="62" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="135" y="85" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">总书记</text>
+            <rect x="350" y="62" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="465" y="85" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">国家主席</text>
+            <line x1="250" y1="80" x2="344" y2="80" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead-zh)"/>
+            <rect x="20" y="114" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="135" y="137" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">政治局常委会</text>
+            <rect x="350" y="114" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="465" y="137" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">国务院</text>
+            <line x1="250" y1="132" x2="344" y2="132" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead-zh)"/>
+            <rect x="20" y="166" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="135" y="189" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">政治局 / 中央委员会</text>
+            <rect x="350" y="166" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="465" y="189" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">各部委</text>
+            <line x1="250" y1="184" x2="344" y2="184" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead-zh)"/>
+            <rect x="20" y="218" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="135" y="241" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">地方党委</text>
+            <rect x="350" y="218" width="230" height="36" rx="4" class="diagram-bg diagram-border"/>
+            <text x="465" y="241" text-anchor="middle" fill="currentColor" font-size="12" font-weight="600">地方政府</text>
+            <line x1="250" y1="236" x2="344" y2="236" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead-zh)"/>
+            <defs>
+              <marker id="arrowhead-zh" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" class="diagram-accent-fill"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption class="diagram__caption">党国二元结构：党的组织（左）在每个层级指挥和领导国家机构（右）。箭头表示权力方向。</figcaption>
+        </figure>
 
-          <rect x="40" y="162" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="120" y="185" text-anchor="middle" fill="currentColor" font-size="13">政治局</text>
-
-          <rect x="40" y="208" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="120" y="231" text-anchor="middle" fill="currentColor" font-size="13">中央委员会</text>
-
-          <!-- Arrows within Party column -->
-          <line x1="120" y1="104" x2="120" y2="116" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="120" y1="150" x2="120" y2="162" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="120" y1="196" x2="120" y2="208" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-
-          <!-- Right column: State -->
-          <rect x="380" y="10" width="200" height="40" rx="6" class="diagram-bg diagram-border" stroke-width="2"/>
-          <text x="480" y="36" text-anchor="middle" fill="currentColor" font-size="15" font-weight="bold">国家</text>
-
-          <rect x="400" y="70" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="480" y="93" text-anchor="middle" fill="currentColor" class="diagram-accent" font-size="13">国家主席</text>
-
-          <rect x="400" y="116" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="480" y="139" text-anchor="middle" fill="currentColor" font-size="13">国务院</text>
-
-          <rect x="400" y="162" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="480" y="185" text-anchor="middle" fill="currentColor" font-size="13">各部委</text>
-
-          <rect x="400" y="208" width="160" height="34" rx="5" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="480" y="231" text-anchor="middle" fill="currentColor" font-size="13">地方政府</text>
-
-          <!-- Arrows within State column -->
-          <line x1="480" y1="104" x2="480" y2="116" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="480" y1="150" x2="480" y2="162" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="480" y1="196" x2="480" y2="208" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-pcg)"/>
-
-          <!-- Cross arrows: party controls state -->
-          <line x1="200" y1="87" x2="400" y2="87" class="diagram-accent" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="200" y1="133" x2="400" y2="133" class="diagram-accent" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="200" y1="179" x2="400" y2="179" class="diagram-accent" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrowhead-pcg)"/>
-          <line x1="200" y1="225" x2="400" y2="225" class="diagram-accent" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrowhead-pcg)"/>
-
-          <!-- Label for arrows -->
-          <text x="300" y="268" text-anchor="middle" fill="currentColor" font-size="12" font-style="italic">虚线箭头 = 党领导国家</text>
-
-          <!-- Arrowhead marker -->
-          <defs>
-            <marker id="arrowhead-pcg" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-              <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
-            </marker>
-          </defs>
-        </svg>
+        <p>在习近平时代，党的一方已通过领导小组（现多称"委员会"）大幅加强，这些机构直接监管原本由政府管理的政策领域。一旦党做出决定，整个国家机器就会步调一致地执行。</p>
 
         <div class="callout">
-          <p class="callout-title">对加拿大为何重要</p>
-          <p>分析中国对加政策时，务必追问：这是党层面的决定还是官僚层面的？党层面的决定（如拘留两名迈克尔）更难以逆转。</p>
+          <h3 class="callout__title">对加拿大为何重要</h3>
+          <div class="callout__body">
+            <p>分析中国对加政策时，务必追问：这是党层面的决定还是官僚层面的？党层面的决定——如拘留康明凯和迈克尔·斯帕弗——在最高层做出，通过常规外交渠道极难逆转。官僚层面的决定可能通过政府间常规接触解决。</p>
+          </div>
         </div>
       </section>
 
       <!-- 6. Provincial -->
       <section id="provincial">
-        <h2>省级和地方治理</h2>
-        <p>中国的行政区划包括：</p>
-        <ul>
-          <li><strong>23个省</strong></li>
-          <li><strong>5个自治区</strong></li>
-          <li><strong>4个直辖市</strong>——北京、上海、天津、重庆</li>
-          <li><strong>2个特别行政区</strong>——香港、澳门</li>
-        </ul>
-        <p>省级领导由中央任命，而非选举产生。地方执行可能与中央政策有显著偏差。</p>
+        <div class="section-heading">
+          <span class="section-number">6</span>
+          <h2>省级和地方治理</h2>
+        </div>
+
+        <p class="key-takeaway">中国庞大的行政区划由中央控制——领导人由任命而非选举产生——但地方执行可能与中央政策存在显著偏差。</p>
+
+        <div class="stat-grid">
+          <div class="stat-grid__item">
+            <div class="stat-grid__value">23</div>
+            <div class="stat-grid__label">省</div>
+          </div>
+          <div class="stat-grid__item">
+            <div class="stat-grid__value">5</div>
+            <div class="stat-grid__label">自治区</div>
+          </div>
+          <div class="stat-grid__item">
+            <div class="stat-grid__value">4</div>
+            <div class="stat-grid__label">直辖市</div>
+          </div>
+          <div class="stat-grid__item">
+            <div class="stat-grid__value">2</div>
+            <div class="stat-grid__label">特别行政区</div>
+          </div>
+        </div>
+
+        <p>省级和地方领导由<strong>中央任命</strong>。党的组织部管理庞大的干部轮换制度，定期在省际及省与中央之间调动领导干部。这确保了对北京的忠诚，但也意味着地方领导有时缺乏对所辖地区的深入了解。</p>
+
+        <p>尽管实行中央任命制，地方执行仍可能出现显著偏差——正如那句古语所说"<em>山高皇帝远</em>"。北京颁布的贸易政策可能在一个省被积极执行，在另一个省则被悄然弱化，取决于当地经济现实。对在中国经商的加拿大人来说，各城市之间的条件可能差异巨大。</p>
       </section>
 
       <!-- 7. Military -->
       <section id="military">
-        <h2>军队：解放军与中央军委</h2>
-        <p>中国人民解放军是党的武装力量，而非国家的。中央军事委员会向党报告。正如毛泽东所言："党指挥枪。"习近平担任中央军委主席。</p>
-        <p>军种包括：</p>
-        <ul>
-          <li>陆军</li>
-          <li>海军</li>
-          <li>空军</li>
-          <li>火箭军</li>
-          <li>战略支援部队</li>
-        </ul>
+        <div class="section-heading">
+          <span class="section-number">7</span>
+          <h2>军队：解放军与中央军委</h2>
+        </div>
+
+        <p class="key-takeaway">解放军是中国共产党的武装力量，而非国家军队。它为党而存在。中央军委向党报告，而非向政府。</p>
+
+        <div class="key-fact-strip">
+          <div class="key-fact">
+            <span class="key-fact__value">习近平</span>
+            <span class="key-fact__label">军委主席</span>
+          </div>
+          <div class="key-fact">
+            <span class="key-fact__value">5</span>
+            <span class="key-fact__label">军种</span>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="institution-table">
+            <thead>
+              <tr>
+                <th>军种</th>
+                <th>英文</th>
+                <th>角色</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>陆军</strong></td>
+                <td>PLAA</td>
+                <td>地面部队——历史上占主导，现正缩减以利于其他军种</td>
+              </tr>
+              <tr>
+                <td><strong>海军</strong></td>
+                <td>PLAN</td>
+                <td>按舰艇数量计算的世界最大海军。南海和台海行动的核心</td>
+              </tr>
+              <tr>
+                <td><strong>空军</strong></td>
+                <td>PLAAF</td>
+                <td>快速现代化，拥有隐身战机和远程打击能力</td>
+              </tr>
+              <tr>
+                <td><strong>火箭军</strong></td>
+                <td>PLARF</td>
+                <td>核与常规导弹武库</td>
+              </tr>
+              <tr>
+                <td><strong>战略支援部队</strong></td>
+                <td>PLASSF</td>
+                <td>太空、网络、电子战和信息作战</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>正如毛泽东所说："<em>党指挥枪，枪绝不能指挥党。</em>"习近平在军队中发起了大规模反腐运动，同时提高了战备水平并确保了个人忠诚。</p>
+
         <div class="callout">
-          <p class="callout-title">对加拿大为何重要</p>
-          <p>解放军的活动（侦察气球、海军演习）反映的是党的战略决策。在中国的体制中，军事信号本质上就是政治信号。</p>
+          <h3 class="callout__title">对加拿大为何重要</h3>
+          <div class="callout__body">
+            <p>解放军的活动——侦察气球、台海附近的海军演习、针对加拿大网络的网络行动——反映的是<strong>党的战略决策</strong>，而非独立的军事冒险。中国不存在"失控将军"的问题。军事信号本质上就是政治信号。</p>
+          </div>
         </div>
       </section>
 
       <!-- 8. Key Institutions -->
       <section id="key-institutions">
-        <h2>加拿大观察者需关注的关键机构</h2>
-        <ul>
-          <li><strong>外交部</strong>——主要外交接口。战狼外交时代。</li>
-          <li><strong>商务部</strong>——贸易政策、关税、反倾销。与油菜籽、木材争端相关。</li>
-          <li><strong>统战部</strong>——海外影响力行动。与外国干预担忧相关。</li>
-          <li><strong>国安部</strong>——情报与反情报。与间谍案件相关。</li>
-          <li><strong>国家发改委</strong>——经济规划、产业政策。</li>
-          <li><strong>国台办</strong>——台湾政策。两岸紧张影响太平洋稳定。</li>
-        </ul>
+        <div class="section-heading">
+          <span class="section-number">8</span>
+          <h2>加拿大观察者需关注的关键机构</h2>
+        </div>
+
+        <p class="key-takeaway">这些机构反复出现在加中关系新闻中。了解每个机构做什么——以及不做什么——对于准确分析至关重要。</p>
+
+        <div class="table-wrap">
+          <table class="institution-table">
+            <thead>
+              <tr>
+                <th>机构</th>
+                <th>英文</th>
+                <th>职能</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>外交部</strong></td>
+                <td>MFA</td>
+                <td>外交接口——传话者而非决策者</td>
+              </tr>
+              <tr>
+                <td><strong>商务部</strong></td>
+                <td>MOFCOM</td>
+                <td>贸易政策、关税、反倾销、外商投资</td>
+              </tr>
+              <tr>
+                <td><strong>统战部</strong></td>
+                <td>UFWD</td>
+                <td>海外影响力、侨务、统一战线工作</td>
+              </tr>
+              <tr>
+                <td><strong>国安部</strong></td>
+                <td>MSS</td>
+                <td>情报、反情报、网络行动</td>
+              </tr>
+              <tr>
+                <td><strong>国家发改委</strong></td>
+                <td>NDRC</td>
+                <td>经济规划、产业政策、五年规划</td>
+              </tr>
+              <tr>
+                <td><strong>国台办</strong></td>
+                <td>TAO</td>
+                <td>两岸政策——亚太最危险的冲突引爆点</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <dl class="definition-list">
+          <dt><strong>外交部 (MFA)</strong></dt>
+          <dd>中国的主要外交接口。自2019年以来采用"战狼外交"——激进的语言和社交媒体反击。然而外交部是<strong>传话者而非决策者</strong>，传达的是党领导层的立场，在中国官僚体系中地位相对较弱。</dd>
+
+          <dt><strong>商务部 (MOFCOM)</strong></dt>
+          <dd>负责贸易政策、关税决定、外商投资审查和贸易救济。2019年对加拿大油菜籽实施限制并管理持续的贸易摩擦。同时监管中国的"不可靠实体清单"。</dd>
+
+          <dt><strong>统战部 (UFWD)</strong></dt>
+          <dd>管理党与国内外非中共群体的关系：海外华人社区、商业精英、宗教组织。是加拿大外国干预辩论的核心，多份报告指认统战系统关联组织在加拿大城市活动。</dd>
+
+          <dt><strong>国安部 (MSS)</strong></dt>
+          <dd>中国的主要情报机构，兼具加拿大CSIS和RCMP的职能。从事间谍、反情报和网络行动。被指控针对加拿大政治人物和科技公司开展行动。</dd>
+
+          <dt><strong>国家发改委 (NDRC)</strong></dt>
+          <dd>中国强大的经济规划机构，有时被称为"小国务院"。制定产业政策、管理价格管控、审批重大项目、协调五年规划。影响中国对自然资源的需求和科技自主战略。</dd>
+
+          <dt><strong>国台办 (TAO)</strong></dt>
+          <dd>管理对台政策。台海军事冲突将通过联盟承诺、经济风险敞口和全球半导体供应链中断直接影响加拿大。</dd>
+        </dl>
       </section>
 
       <!-- 9. Decision Making -->
       <section id="decision-making">
-        <h2>决策：政策如何产生</h2>
-        <p>政策过程通常遵循以下路径：</p>
-        <ol>
-          <li>党内协商</li>
-          <li>领导小组研究</li>
-          <li>政治局讨论</li>
-          <li>国务院执行</li>
-          <li>部委落实</li>
+        <div class="section-heading">
+          <span class="section-number">9</span>
+          <h2>决策：政策如何产生</h2>
+        </div>
+
+        <p class="key-takeaway">最重要的决策在党的结构内部闭门做出。中国观察者通过解读信号——官方媒体措辞、人事变动、机构声明、时间节点——来预判政策。</p>
+
+        <!-- SVG Diagram: Policy Decision Flowchart -->
+        <figure class="diagram">
+          <svg viewBox="0 0 600 200" role="img" aria-label="政策决策流程图">
+            <rect x="6" y="70" width="100" height="50" rx="4" class="diagram-accent"/>
+            <text x="56" y="92" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">党的</text>
+            <text x="56" y="106" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">领导层</text>
+            <line x1="106" y1="95" x2="126" y2="95" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead2-zh)"/>
+            <rect x="126" y="70" width="100" height="50" rx="4" class="diagram-bg diagram-border"/>
+            <text x="176" y="92" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">领导</text>
+            <text x="176" y="106" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">小组</text>
+            <line x1="226" y1="95" x2="246" y2="95" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead2-zh)"/>
+            <rect x="246" y="70" width="100" height="50" rx="4" class="diagram-bg diagram-border"/>
+            <text x="296" y="98" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">国务院</text>
+            <line x1="346" y1="95" x2="366" y2="95" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead2-zh)"/>
+            <rect x="366" y="70" width="100" height="50" rx="4" class="diagram-bg diagram-border"/>
+            <text x="416" y="98" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">各部委</text>
+            <line x1="466" y1="95" x2="486" y2="95" class="diagram-accent-stroke" stroke-width="2" marker-end="url(#arrowhead2-zh)"/>
+            <rect x="486" y="70" width="108" height="50" rx="4" class="diagram-bg diagram-border"/>
+            <text x="540" y="98" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600">执行落实</text>
+            <text x="56" y="52" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.7">决策</text>
+            <text x="176" y="52" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.7">协调</text>
+            <text x="296" y="52" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.7">转化</text>
+            <text x="416" y="52" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.7">执行</text>
+            <text x="540" y="52" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.7">落实</text>
+            <defs>
+              <marker id="arrowhead2-zh" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" class="diagram-accent-fill"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption class="diagram__caption">简化政策流程：决策源于党的领导层，经过协调、转化和执行阶段。</figcaption>
+        </figure>
+
+        <ol class="step-list">
+          <li class="step-list__item">
+            <div>
+              <p class="step-list__title">党内协商</p>
+              <p class="step-list__desc">在党的相关机构内识别和讨论政策问题。重大问题从总书记/常委会层面开始。</p>
+            </div>
+          </li>
+          <li class="step-list__item">
+            <div>
+              <p class="step-list__title">领导小组研究</p>
+              <p class="step-list__desc">强大的协调机构，通常由习近平主持，汇集跨部门的党政官员。</p>
+            </div>
+          </li>
+          <li class="step-list__item">
+            <div>
+              <p class="step-list__title">政治局/常委会批准</p>
+              <p class="step-list__desc">重大决策在政治局（每月一次）或常委会（定期）层面讨论和批准，具有最高权威。</p>
+            </div>
+          </li>
+          <li class="step-list__item">
+            <div>
+              <p class="step-list__title">国务院转化</p>
+              <p class="step-list__desc">将党的决定转化为法规、预算和对各部委的指令。</p>
+            </div>
+          </li>
+          <li class="step-list__item">
+            <div>
+              <p class="step-list__title">部委和地方执行</p>
+              <p class="step-list__desc">各部委和省级政府执行政策。中央意图与地方现实之间可能存在较大差距。</p>
+            </div>
+          </li>
         </ol>
-        <p>注意：过程不透明。中国观察者通过官方媒体措辞、人事变动和机构声明来寻找信号。</p>
 
-        <svg viewBox="0 0 600 200" aria-label="决策流程图" role="img" style="width:100%;max-width:600px;display:block;margin:2rem auto;">
-          <defs>
-            <marker id="arrowhead-dm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-              <polygon points="0 0, 8 3, 0 6" fill="currentColor"/>
-            </marker>
-          </defs>
+        <h3>解读信号</h3>
 
-          <!-- Boxes -->
-          <rect x="10" y="70" width="90" height="50" rx="6" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="55" y="100" text-anchor="middle" fill="currentColor" font-size="12" font-weight="bold">党的领导</text>
-
-          <rect x="135" y="70" width="90" height="50" rx="6" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="180" y="100" text-anchor="middle" fill="currentColor" font-size="12">领导小组</text>
-
-          <rect x="260" y="70" width="90" height="50" rx="6" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="305" y="100" text-anchor="middle" fill="currentColor" font-size="12">国务院</text>
-
-          <rect x="385" y="70" width="90" height="50" rx="6" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="430" y="100" text-anchor="middle" fill="currentColor" font-size="12">各部委</text>
-
-          <rect x="510" y="70" width="80" height="50" rx="6" class="diagram-bg diagram-border" stroke-width="1.5"/>
-          <text x="550" y="100" text-anchor="middle" fill="currentColor" font-size="12">执行落实</text>
-
-          <!-- Arrows -->
-          <line x1="100" y1="95" x2="135" y2="95" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-dm)"/>
-          <line x1="225" y1="95" x2="260" y2="95" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-dm)"/>
-          <line x1="350" y1="95" x2="385" y2="95" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-dm)"/>
-          <line x1="475" y1="95" x2="510" y2="95" class="diagram-border" stroke-width="1.5" marker-end="url(#arrowhead-dm)"/>
-        </svg>
+        <div class="signal-grid">
+          <div class="signal-grid__item">
+            <p class="signal-grid__title">官方媒体措辞</p>
+            <p class="signal-grid__text">新华社或《人民日报》措辞的微妙变化预示着重大政策转向。用词经过极其精确的选择。</p>
+          </div>
+          <div class="signal-grid__item">
+            <p class="signal-grid__title">人事变动</p>
+            <p class="signal-grid__text">谁被提拔、降级或清洗，揭示了权力动态和政策优先事项。</p>
+          </div>
+          <div class="signal-grid__item">
+            <p class="signal-grid__title">机构层级</p>
+            <p class="signal-grid__text">外交部发声可能是例行公事。常委会发表声明则代表党的全部权威。</p>
+          </div>
+          <div class="signal-grid__item">
+            <p class="signal-grid__title">时间节点</p>
+            <p class="signal-grid__text">党代会前后的决策分量不同。敏感纪念日期间的行动承载着象征意义。</p>
+          </div>
+        </div>
       </section>
 
       <!-- 10. Glossary -->
       <section id="glossary">
-        <h2>关键术语表</h2>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>中文</th>
-              <th>English</th>
-              <th>释义</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>中国共产党</td>
-              <td>CCP</td>
-              <td>1949年以来的执政党</td>
-            </tr>
-            <tr>
-              <td>全国人民代表大会</td>
-              <td>NPC</td>
-              <td>中国立法机构</td>
-            </tr>
-            <tr>
-              <td>中国人民政治协商会议</td>
-              <td>CPPCC</td>
-              <td>咨询机构，统一战线角色</td>
-            </tr>
-            <tr>
-              <td>国务院</td>
-              <td>State Council</td>
-              <td>中国内阁，由总理领导</td>
-            </tr>
-            <tr>
-              <td>中央政治局常务委员会</td>
-              <td>PSC</td>
-              <td>最高7人决策机构</td>
-            </tr>
-            <tr>
-              <td>中央军事委员会</td>
-              <td>CMC</td>
-              <td>指挥解放军</td>
-            </tr>
-            <tr>
-              <td>两会</td>
-              <td>Two Sessions</td>
-              <td>每年三月的人大和政协会议</td>
-            </tr>
-            <tr>
-              <td>领导小组</td>
-              <td>Leading Small Group</td>
-              <td>非正式但有实权的政策协调机构</td>
-            </tr>
-            <tr>
-              <td>统一战线</td>
-              <td>United Front</td>
-              <td>吸纳非党群体的策略</td>
-            </tr>
-            <tr>
-              <td>战狼外交</td>
-              <td>Wolf Warrior Diplomacy</td>
-              <td>约2019年以来的强硬外交风格</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="section-heading">
+          <span class="section-number">10</span>
+          <h2>关键术语表</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>中文</th>
+                <th>English</th>
+                <th>释义</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>中国共产党</strong></td>
+                <td>CCP</td>
+                <td>1949年以来的执政党，约9800万党员。</td>
+              </tr>
+              <tr>
+                <td><strong>全国人民代表大会</strong></td>
+                <td>NPC</td>
+                <td>中国立法机构。约3,000名代表，每年三月开会。批准而非发起立法。</td>
+              </tr>
+              <tr>
+                <td><strong>中国人民政治协商会议</strong></td>
+                <td>CPPCC</td>
+                <td>咨询机构，统一战线功能。无立法权。</td>
+              </tr>
+              <tr>
+                <td><strong>国务院</strong></td>
+                <td>State Council</td>
+                <td>中国内阁，由总理领导。执行党的决定。</td>
+              </tr>
+              <tr>
+                <td><strong>中央政治局常务委员会</strong></td>
+                <td>PSC</td>
+                <td>中共最高7人决策机构。</td>
+              </tr>
+              <tr>
+                <td><strong>中央军事委员会</strong></td>
+                <td>CMC</td>
+                <td>指挥解放军。习近平担任主席。向党负责。</td>
+              </tr>
+              <tr>
+                <td><strong>两会</strong></td>
+                <td>Two Sessions</td>
+                <td>每年三月人大和政协的同期会议。</td>
+              </tr>
+              <tr>
+                <td><strong>领导小组</strong></td>
+                <td>Leading Small Group</td>
+                <td>有实权的政策协调机构。习近平时代多升格为"委员会"。</td>
+              </tr>
+              <tr>
+                <td><strong>统一战线</strong></td>
+                <td>United Front</td>
+                <td>吸纳国内外非党群体的策略。与加拿大外国干预辩论相关。</td>
+              </tr>
+              <tr>
+                <td><strong>战狼外交</strong></td>
+                <td>Wolf Warrior Diplomacy</td>
+                <td>约2019年以来的强硬外交风格。对抗性言辞和社交媒体使用。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
     </article>
